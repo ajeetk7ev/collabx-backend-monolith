@@ -4,5 +4,9 @@ dotenv.config();
 const envVars = process.env;
 
 export const env = {
-  PORT: envVars.PORT,
+  PORT: envVars.PORT || "5001",
+  ACCESS_TOKEN_SECRET: envVars.ACCESS_TOKEN_SECRET || "some_super_secret_access_token_key_12345",
+  ACCESS_TOKEN_EXPIRY: envVars.ACCESS_TOKEN_EXPIRY || "1d",
+  REFRESH_TOKEN_SECRET: envVars.REFRESH_TOKEN_SECRET || "some_super_secret_refresh_token_key_67890",
+  REFRESH_TOKEN_EXPIRY: envVars.REFRESH_TOKEN_EXPIRY || "7d",
 };
