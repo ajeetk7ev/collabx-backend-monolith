@@ -27,3 +27,68 @@
     at Function.signUp (D:\DevCollab\collabx-backend\src\services\auth.service.ts:35:13)
     at processTicksAndRejections (node:internal/process/task_queues:95:5)
     at async signUp (D:\DevCollab\collabx-backend\src\controllers\auth.controller.ts:15:18)
+[2026-06-18 21:47:27:4727] [ERROR]: POST /api/v1/auth/signup - Status: 400 - Message: User with this email already exists
+[2026-06-18 21:47:27:4727] [ERROR]: Error: User with this email already exists
+    at Function.signUp (D:\DevCollab\collabx-backend\src\services\auth.service.ts:35:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async signUp (D:\DevCollab\collabx-backend\src\controllers\auth.controller.ts:16:18)
+[2026-06-18 21:47:45:4745] [ERROR]: POST /api/v1/auth/signup - Status: 400 - Message: User with this email already exists
+[2026-06-18 21:47:45:4745] [ERROR]: Error: User with this email already exists
+    at Function.signUp (D:\DevCollab\collabx-backend\src\services\auth.service.ts:35:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async signUp (D:\DevCollab\collabx-backend\src\controllers\auth.controller.ts:16:18)
+[2026-06-18 21:49:50:4950] [ERROR]: POST /api/v1/auth/signup - Status: 400 - Message: User with this email already exists
+[2026-06-18 21:49:50:4950] [ERROR]: Error: User with this email already exists
+    at Function.signUp (D:\DevCollab\collabx-backend\src\services\auth.service.ts:35:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async signUp (D:\DevCollab\collabx-backend\src\controllers\auth.controller.ts:16:18)
+[2026-06-19 20:16:29:1629] [ERROR]: POST /api/v1/workspaces - Status: 401 - Message: Access token is missing. Please log in.
+[2026-06-19 20:16:29:1629] [ERROR]: Error: Access token is missing. Please log in.
+    at authenticate (D:\DevCollab\collabx-backend\src\middlewares\auth.middleware.ts:30:11)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (D:\DevCollab\collabx-backend\node_modules\router\index.js:342:13)
+    at D:\DevCollab\collabx-backend\node_modules\router\index.js:297:9
+    at processParams (D:\DevCollab\collabx-backend\node_modules\router\index.js:582:12)
+    at next (D:\DevCollab\collabx-backend\node_modules\router\index.js:291:5)
+    at Function.handle (D:\DevCollab\collabx-backend\node_modules\router\index.js:186:3)
+    at router (D:\DevCollab\collabx-backend\node_modules\router\index.js:60:12)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (D:\DevCollab\collabx-backend\node_modules\router\index.js:342:13)
+[2026-06-19 20:16:29:1629] [ERROR]: POST /api/v1/auth/refresh - Status: 401 - Message: Refresh token is missing
+[2026-06-19 20:16:29:1629] [ERROR]: Error: Refresh token is missing
+    at Function.refresh (D:\DevCollab\collabx-backend\src\services\auth.service.ts:102:13)
+    at refresh (D:\DevCollab\collabx-backend\src\controllers\auth.controller.ts:72:67)
+    at D:\DevCollab\collabx-backend\src\utils\asyncHandler.ts:7:21
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\DevCollab\collabx-backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\DevCollab\collabx-backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\DevCollab\collabx-backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at D:\DevCollab\collabx-backend\node_modules\router\index.js:295:15
+    at processParams (D:\DevCollab\collabx-backend\node_modules\router\index.js:582:12)
+[2026-06-19 20:16:39:1639] [ERROR]: POST /api/v1/auth/signin - Status: 401 - Message: Invalid email or password
+[2026-06-19 20:16:39:1639] [ERROR]: Error: Invalid email or password
+    at Function.signIn (D:\DevCollab\collabx-backend\src\services\auth.service.ts:64:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async signIn (D:\DevCollab\collabx-backend\src\controllers\auth.controller.ts:25:49)
+[2026-06-19 20:16:39:1639] [ERROR]: POST /api/v1/auth/refresh - Status: 401 - Message: Refresh token is missing
+[2026-06-19 20:16:39:1639] [ERROR]: Error: Refresh token is missing
+    at Function.refresh (D:\DevCollab\collabx-backend\src\services\auth.service.ts:102:13)
+    at refresh (D:\DevCollab\collabx-backend\src\controllers\auth.controller.ts:72:67)
+    at D:\DevCollab\collabx-backend\src\utils\asyncHandler.ts:7:21
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\DevCollab\collabx-backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\DevCollab\collabx-backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\DevCollab\collabx-backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at D:\DevCollab\collabx-backend\node_modules\router\index.js:295:15
+    at processParams (D:\DevCollab\collabx-backend\node_modules\router\index.js:582:12)
+[2026-06-19 20:25:15:2515] [ERROR]: POST /api/v1/workspaces - Status: 500 - Message: Failed to upload image to Cloudinary.
+[2026-06-19 20:25:15:2515] [ERROR]: Error: Failed to upload image to Cloudinary.
+    at D:\DevCollab\collabx-backend\src\config\cloudinary.ts:32:18
+    at D:\DevCollab\collabx-backend\node_modules\cloudinary\lib\utils\index.js:1388:14
+    at IncomingMessage.<anonymous> (D:\DevCollab\collabx-backend\node_modules\cloudinary\lib\uploader.js:528:9)
+    at IncomingMessage.emit (node:events:536:35)
+    at IncomingMessage.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)

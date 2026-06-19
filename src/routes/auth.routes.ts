@@ -9,5 +9,6 @@ const router = Router();
 router.post("/signup", validateBody(signUpSchema), asyncHandler(AuthController.signUp));
 router.post("/signin", validateBody(signInSchema), asyncHandler(AuthController.signIn));
 router.post("/logout", asyncHandler(AuthController.logout));
+router.post("/refresh", asyncHandler(AuthController.refresh));
 
 export default router;

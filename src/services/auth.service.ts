@@ -96,4 +96,41 @@ export class AuthService {
       data: { refreshToken: null },
     });
   }
+
+  static async refresh(token: string) {
+    if (!token) {
+      throw new ApiError(401, "Refresh token is missing");
+    }
+
+    try {
+      const decoded = jwt.verify(token, env.REFRESH_TOKEN_SECRET) as { id: number };
+      const user = await prisma.user.findUnique({
+        where: { id: decoded.id },
+      });
+
+      if (!user || user.refreshToken !== token) {
+        throw new ApiError(401, "Invalid refresh token");
+      }
+
+      // Generate new access and refresh tokens
+      const accessToken = generateAccessToken(user);
+      const newRefreshToken = generateRefreshToken(user);
+
+      // Update refresh token in db
+      await prisma.user.update({
+        where: { id: user.id },
+        data: { refreshToken: newRefreshToken },
+      });
+
+      // Return user and tokens
+      const { password: _, refreshToken: __, ...userWithoutPassword } = user;
+      return {
+        user: userWithoutPassword,
+        accessToken,
+        refreshToken: newRefreshToken,
+      };
+    } catch (error) {
+      throw new ApiError(401, "Invalid refresh token");
+    }
+  }
 }

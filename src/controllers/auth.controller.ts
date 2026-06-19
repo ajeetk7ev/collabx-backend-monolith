@@ -66,4 +66,17 @@ export class AuthController {
       new ApiResponse(200, null, "User logged out successfully")
     );
   }
+
+  static async refresh(req: Request, res: Response): Promise<void> {
+    const token = req.cookies?.refreshToken;
+    const { user, accessToken, refreshToken } = await AuthService.refresh(token);
+
+    // Set new cookies
+    res.cookie("accessToken", accessToken, cookieOptions);
+    res.cookie("refreshToken", refreshToken, cookieOptions);
+
+    res.status(200).json(
+      new ApiResponse(200, { user }, "Tokens refreshed successfully")
+    );
+  }
 }

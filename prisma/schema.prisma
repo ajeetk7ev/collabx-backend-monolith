@@ -19,14 +19,26 @@ enum Role {
 }
 
 model User {
-  id           Int      @id @default(autoincrement())
+  id           Int         @id @default(autoincrement())
   firstname    String
   lastname     String
-  email        String   @unique
-  role         Role     @default(member)
+  email        String      @unique
+  role         Role        @default(member)
   avatar       String?
   password     String
   refreshToken String?
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+  workspaces   Workspace[]
+}
+
+model Workspace {
+  id        Int      @id @default(autoincrement())
+  name      String
+  slug      String   @unique
+  logo      String?
+  ownerId   Int
+  owner     User     @relation(fields: [ownerId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
