@@ -92,3 +92,165 @@
     at IncomingMessage.emit (node:domain:489:12)
     at endReadableNT (node:internal/streams/readable:1698:12)
     at processTicksAndRejections (node:internal/process/task_queues:82:21)
+[2026-06-19 20:39:59:3959] [ERROR]: POST /api/v1/auth/signin - Status: 401 - Message: Invalid email or password
+[2026-06-19 20:39:59:3959] [ERROR]: Error: Invalid email or password
+    at Function.signIn (D:\DevCollab\collabx-backend\src\services\auth.service.ts:64:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async signIn (D:\DevCollab\collabx-backend\src\controllers\auth.controller.ts:25:64)
+[2026-06-19 20:39:59:3959] [ERROR]: POST /api/v1/auth/refresh - Status: 401 - Message: Refresh token is missing
+[2026-06-19 20:39:59:3959] [ERROR]: Error: Refresh token is missing
+    at Function.refresh (D:\DevCollab\collabx-backend\src\services\auth.service.ts:108:13)
+    at refresh (D:\DevCollab\collabx-backend\src\controllers\auth.controller.ts:72:67)
+    at D:\DevCollab\collabx-backend\src\utils\asyncHandler.ts:7:21
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\DevCollab\collabx-backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\DevCollab\collabx-backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\DevCollab\collabx-backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at D:\DevCollab\collabx-backend\node_modules\router\index.js:295:15
+    at processParams (D:\DevCollab\collabx-backend\node_modules\router\index.js:582:12)
+[2026-06-19 20:40:07:407] [ERROR]: POST /api/v1/auth/signin - Status: 401 - Message: Invalid email or password
+[2026-06-19 20:40:07:407] [ERROR]: Error: Invalid email or password
+    at Function.signIn (D:\DevCollab\collabx-backend\src\services\auth.service.ts:64:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async signIn (D:\DevCollab\collabx-backend\src\controllers\auth.controller.ts:25:64)
+[2026-06-19 20:40:07:407] [ERROR]: POST /api/v1/auth/refresh - Status: 401 - Message: Refresh token is missing
+[2026-06-19 20:40:07:407] [ERROR]: Error: Refresh token is missing
+    at Function.refresh (D:\DevCollab\collabx-backend\src\services\auth.service.ts:108:13)
+    at refresh (D:\DevCollab\collabx-backend\src\controllers\auth.controller.ts:72:67)
+    at D:\DevCollab\collabx-backend\src\utils\asyncHandler.ts:7:21
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\DevCollab\collabx-backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\DevCollab\collabx-backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\DevCollab\collabx-backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at D:\DevCollab\collabx-backend\node_modules\router\index.js:295:15
+    at processParams (D:\DevCollab\collabx-backend\node_modules\router\index.js:582:12)
+[2026-06-19 20:40:14:4014] [ERROR]: POST /api/v1/auth/signin - Status: 401 - Message: Invalid email or password
+[2026-06-19 20:40:14:4014] [ERROR]: Error: Invalid email or password
+    at Function.signIn (D:\DevCollab\collabx-backend\src\services\auth.service.ts:64:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async signIn (D:\DevCollab\collabx-backend\src\controllers\auth.controller.ts:25:64)
+[2026-06-19 20:40:14:4014] [ERROR]: POST /api/v1/auth/refresh - Status: 401 - Message: Refresh token is missing
+[2026-06-19 20:40:14:4014] [ERROR]: Error: Refresh token is missing
+    at Function.refresh (D:\DevCollab\collabx-backend\src\services\auth.service.ts:108:13)
+    at refresh (D:\DevCollab\collabx-backend\src\controllers\auth.controller.ts:72:67)
+    at D:\DevCollab\collabx-backend\src\utils\asyncHandler.ts:7:21
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\DevCollab\collabx-backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\DevCollab\collabx-backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\DevCollab\collabx-backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at D:\DevCollab\collabx-backend\node_modules\router\index.js:295:15
+    at processParams (D:\DevCollab\collabx-backend\node_modules\router\index.js:582:12)
+[2026-06-19 20:40:17:4017] [ERROR]: POST /api/v1/auth/signin - Status: 401 - Message: Invalid email or password
+[2026-06-19 20:40:17:4017] [ERROR]: Error: Invalid email or password
+    at Function.signIn (D:\DevCollab\collabx-backend\src\services\auth.service.ts:64:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async signIn (D:\DevCollab\collabx-backend\src\controllers\auth.controller.ts:25:64)
+[2026-06-19 20:40:17:4017] [ERROR]: POST /api/v1/auth/refresh - Status: 401 - Message: Refresh token is missing
+[2026-06-19 20:40:17:4017] [ERROR]: Error: Refresh token is missing
+    at Function.refresh (D:\DevCollab\collabx-backend\src\services\auth.service.ts:108:13)
+    at refresh (D:\DevCollab\collabx-backend\src\controllers\auth.controller.ts:72:67)
+    at D:\DevCollab\collabx-backend\src\utils\asyncHandler.ts:7:21
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\DevCollab\collabx-backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\DevCollab\collabx-backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\DevCollab\collabx-backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at D:\DevCollab\collabx-backend\node_modules\router\index.js:295:15
+    at processParams (D:\DevCollab\collabx-backend\node_modules\router\index.js:582:12)
+[2026-06-20 14:55:11:5511] [ERROR]: POST /api/v1/auth/signin - Status: 401 - Message: Invalid email or password
+[2026-06-20 14:55:11:5511] [ERROR]: Error: Invalid email or password
+    at Function.signIn (D:\DevCollab\collabx-backend\src\services\auth.service.ts:70:13)
+    at async signIn (D:\DevCollab\collabx-backend\src\controllers\auth.controller.ts:25:64)
+[2026-06-20 14:55:11:5511] [ERROR]: POST /api/v1/auth/refresh - Status: 401 - Message: Refresh token is missing
+[2026-06-20 14:55:11:5511] [ERROR]: Error: Refresh token is missing
+    at Function.refresh (D:\DevCollab\collabx-backend\src\services\auth.service.ts:113:13)
+    at refresh (D:\DevCollab\collabx-backend\src\controllers\auth.controller.ts:72:67)
+    at D:\DevCollab\collabx-backend\src\utils\asyncHandler.ts:7:21
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\DevCollab\collabx-backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\DevCollab\collabx-backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\DevCollab\collabx-backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at D:\DevCollab\collabx-backend\node_modules\router\index.js:295:15
+    at processParams (D:\DevCollab\collabx-backend\node_modules\router\index.js:582:12)
+[2026-06-20 16:02:11:211] [ERROR]: POST /api/v1/workspaces/2/members - Status: 500 - Message: request entity too large
+[2026-06-20 16:02:11:211] [ERROR]: PayloadTooLargeError: request entity too large
+    at readStream (D:\DevCollab\collabx-backend\node_modules\raw-body\index.js:163:17)
+    at getRawBody (D:\DevCollab\collabx-backend\node_modules\raw-body\index.js:116:12)
+    at read (D:\DevCollab\collabx-backend\node_modules\body-parser\lib\read.js:113:3)
+    at jsonParser (D:\DevCollab\collabx-backend\node_modules\body-parser\lib\types\json.js:60:5)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (D:\DevCollab\collabx-backend\node_modules\router\index.js:342:13)
+    at D:\DevCollab\collabx-backend\node_modules\router\index.js:297:9
+    at processParams (D:\DevCollab\collabx-backend\node_modules\router\index.js:582:12)
+    at next (D:\DevCollab\collabx-backend\node_modules\router\index.js:291:5)
+    at cors (D:\DevCollab\collabx-backend\node_modules\cors\lib\index.js:188:7)
+[2026-06-20 16:13:32:1332] [ERROR]: GET /api/v1/workspaces/2/members?q=&role=all&page=1&limit=10 - Status: 500 - Message: 
+Invalid `prisma.workspaceMember.count()` invocation in
+D:\DevCollab\collabx-backend\src\services\workspace-member.service.ts:101:30
+
+   98 }
+   99 
+  100 const [total, members] = await prisma.$transaction([
+→ 101   prisma.workspaceMember.count(
+Transaction API error: Unable to start a transaction in the given time.
+[2026-06-20 16:13:32:1332] [ERROR]: PrismaClientKnownRequestError: 
+Invalid `prisma.workspaceMember.count()` invocation in
+D:\DevCollab\collabx-backend\src\services\workspace-member.service.ts:101:30
+
+   98 }
+   99 
+  100 const [total, members] = await prisma.$transaction([
+→ 101   prisma.workspaceMember.count(
+Transaction API error: Unable to start a transaction in the given time.
+    at zr.handleRequestError (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:237:13)
+    at zr.handleAndLogRequestError (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:183:12)
+    at zr.request (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:152:12)
+    at async a (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:963:24)
+[2026-06-20 16:14:20:1420] [ERROR]: GET /api/v1/workspaces/2/members?q=&role=all&page=1&limit=10 - Status: 500 - Message: 
+Invalid `prisma.workspaceMember.count()` invocation in
+D:\DevCollab\collabx-backend\src\services\workspace-member.service.ts:101:30
+
+   98 }
+   99 
+  100 const [total, members] = await prisma.$transaction([
+→ 101   prisma.workspaceMember.count(
+Transaction API error: Unable to start a transaction in the given time.
+[2026-06-20 16:14:20:1420] [ERROR]: PrismaClientKnownRequestError: 
+Invalid `prisma.workspaceMember.count()` invocation in
+D:\DevCollab\collabx-backend\src\services\workspace-member.service.ts:101:30
+
+   98 }
+   99 
+  100 const [total, members] = await prisma.$transaction([
+→ 101   prisma.workspaceMember.count(
+Transaction API error: Unable to start a transaction in the given time.
+    at zr.handleRequestError (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:237:13)
+    at zr.handleAndLogRequestError (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:183:12)
+    at zr.request (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:152:12)
+    at async a (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:963:24)
+[2026-06-20 16:14:22:1422] [ERROR]: GET /api/v1/workspaces/2/members?q=&role=all&page=1&limit=10 - Status: 500 - Message: 
+Invalid `prisma.workspaceMember.count()` invocation in
+D:\DevCollab\collabx-backend\src\services\workspace-member.service.ts:101:30
+
+   98 }
+   99 
+  100 const [total, members] = await prisma.$transaction([
+→ 101   prisma.workspaceMember.count(
+Transaction API error: Unable to start a transaction in the given time.
+[2026-06-20 16:14:22:1422] [ERROR]: PrismaClientKnownRequestError: 
+Invalid `prisma.workspaceMember.count()` invocation in
+D:\DevCollab\collabx-backend\src\services\workspace-member.service.ts:101:30
+
+   98 }
+   99 
+  100 const [total, members] = await prisma.$transaction([
+→ 101   prisma.workspaceMember.count(
+Transaction API error: Unable to start a transaction in the given time.
+    at zr.handleRequestError (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:237:13)
+    at zr.handleAndLogRequestError (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:183:12)
+    at zr.request (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:152:12)
+    at async a (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:963:24)

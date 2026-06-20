@@ -80,12 +80,23 @@ export class AuthService {
       data: { refreshToken },
     });
 
+    // Count workspaces owned by this user or where they are a member
+    const workspaceCount = await prisma.workspace.count({
+      where: {
+        OR: [
+          { ownerId: user.id },
+          { members: { some: { userId: user.id } } },
+        ],
+      },
+    });
+
     // Return user without password and refreshToken
     const { password: _, refreshToken: __, ...userWithoutPassword } = user;
     return {
       user: userWithoutPassword,
       accessToken,
       refreshToken,
+      hasWorkspaces: workspaceCount > 0,
     };
   }
 

@@ -12,8 +12,6 @@ export class WorkspaceController {
     const { name, slug } = req.body;
     const logoBuffer = req.file?.buffer;
 
-    console.log("Printing the file buffer in to the controller ", logoBuffer);
-
     const workspace = await WorkspaceService.create(
       { name, slug },
       req.user!.id,
@@ -29,10 +27,10 @@ export class WorkspaceController {
 
   /**
    * GET /api/v1/workspaces
-   * Get all workspaces owned by the authenticated user.
+   * Get all workspaces associated with the current user.
    */
   static async getMyWorkspaces(req: AuthRequest, res: Response): Promise<void> {
-    const workspaces = await WorkspaceService.getByOwnerId(req.user!.id);
+    const workspaces = await WorkspaceService.getByUserId(req.user!.id);
 
     res
       .status(200)

@@ -9,8 +9,11 @@ import {
   createWorkspaceSchema,
   updateWorkspaceSchema,
 } from "../validation/workspace.validation";
+import workspaceMemberRoutes from "./workspace-member.routes";
 
 const router = Router();
+
+router.use("/:workspaceId/members", workspaceMemberRoutes);
 
 // All workspace routes require authentication
 router.use(authenticate as any);

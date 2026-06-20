@@ -19,17 +19,18 @@ enum Role {
 }
 
 model User {
-  id           Int         @id @default(autoincrement())
-  firstname    String
-  lastname     String
-  email        String      @unique
-  role         Role        @default(member)
-  avatar       String?
-  password     String
-  refreshToken String?
-  createdAt    DateTime    @default(now())
-  updatedAt    DateTime    @updatedAt
-  workspaces   Workspace[]
+  id               Int         @id @default(autoincrement())
+  firstname        String
+  lastname         String
+  email            String      @unique
+  role             Role        @default(member)
+  avatar           String?
+  password         String
+  refreshToken     String?
+  createdAt        DateTime    @default(now())
+  updatedAt        DateTime    @updatedAt
+  ownedWorkspaces  Workspace[]       @relation("WorkspaceOwner")
+  workspaceMembers WorkspaceMember[]
 }
 
 model Workspace {
@@ -38,7 +39,23 @@ model Workspace {
   slug      String   @unique
   logo      String?
   ownerId   Int
-  owner     User     @relation(fields: [ownerId], references: [id])
+  owner     User     @relation("WorkspaceOwner", fields: [ownerId], references: [id])
+  members   WorkspaceMember[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+model WorkspaceMember {
+  id          Int      @id @default(autoincrement())
+  userId      Int
+  workspaceId Int
+  role        Role     @default(member)
+  status      String   @default("active")
+  presence    String   @default("online")
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  workspace   Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@unique([userId, workspaceId])
 }

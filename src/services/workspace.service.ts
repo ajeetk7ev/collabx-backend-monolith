@@ -77,11 +77,16 @@ export class WorkspaceService {
   }
 
   /**
-   * Get all workspaces owned by a specific user.
+   * Get all workspaces associated with a specific user (owner or member).
    */
-  static async getByOwnerId(ownerId: number) {
+  static async getByUserId(userId: number) {
     const workspaces = await prisma.workspace.findMany({
-      where: { ownerId },
+      where: {
+        OR: [
+          { ownerId: userId },
+          { members: { some: { userId: userId } } },
+        ],
+      },
       include: {
         owner: {
           select: {

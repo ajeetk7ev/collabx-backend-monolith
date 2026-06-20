@@ -22,14 +22,14 @@ export class AuthController {
 
   static async signIn(req: Request, res: Response): Promise<void> {
     const { email, password } = req.body;
-    const { user, accessToken, refreshToken } = await AuthService.signIn(email, password);
+    const { user, accessToken, refreshToken, hasWorkspaces } = await AuthService.signIn(email, password);
 
     // Set cookies
     res.cookie("accessToken", accessToken, cookieOptions);
     res.cookie("refreshToken", refreshToken, cookieOptions);
 
     res.status(200).json(
-      new ApiResponse(200, { user }, "User logged in successfully")
+      new ApiResponse(200, { user, hasWorkspaces }, "User logged in successfully")
     );
   }
 
