@@ -4,6 +4,7 @@ import { authenticate } from "../middlewares/auth.middleware";
 import { authorizeRoles } from "../middlewares/role.middleware";
 import { validateBody } from "../middlewares/validation.middleware";
 import { asyncHandler } from "../utils/asyncHandler";
+import { upload } from "../config/multer";
 import {
   addWorkspaceMemberSchema,
   updateWorkspaceMemberSchema,
@@ -16,6 +17,7 @@ router.use(authenticate as any);
 router.post(
   "/",
   authorizeRoles("owner", "admin") as any,
+  upload.single("avatar"),
   validateBody(addWorkspaceMemberSchema) as any,
   asyncHandler(WorkspaceMemberController.addMember as any)
 );
@@ -28,6 +30,7 @@ router.get(
 router.patch(
   "/:memberId",
   authorizeRoles("owner", "admin") as any,
+  upload.single("avatar"),
   validateBody(updateWorkspaceMemberSchema) as any,
   asyncHandler(WorkspaceMemberController.updateMember as any)
 );

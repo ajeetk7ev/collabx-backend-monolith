@@ -22,6 +22,7 @@ export class WorkspaceMemberController {
       role,
       status,
       presence,
+      ...(req.file && { avatarBuffer: req.file.buffer }),
     });
 
     res
@@ -70,6 +71,7 @@ export class WorkspaceMemberController {
         role,
         status,
         presence,
+        ...(req.file && { avatarBuffer: req.file.buffer }),
       },
     );
 

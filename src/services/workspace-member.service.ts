@@ -1,5 +1,6 @@
 import { prisma } from "../config/prisma";
 import { ApiError } from "../utils/ApiError";
+import { uploadToCloudinary } from "../config/cloudinary";
 import bcrypt from "bcryptjs";
 
 export class WorkspaceMemberService {
@@ -13,6 +14,7 @@ export class WorkspaceMemberService {
       role: "owner" | "admin" | "member";
       status: string;
       presence: string;
+      avatarBuffer?: Buffer;
     }
   ) {
     let user = await prisma.user.findUnique({ where: { email: data.email } });
@@ -30,6 +32,15 @@ export class WorkspaceMemberService {
           password: hashedPassword,
           role: "member", // default global role
         },
+      });
+    }
+
+    // Upload avatar if provided
+    if (data.avatarBuffer) {
+      const result = await uploadToCloudinary(data.avatarBuffer, "collabx/avatars");
+      await prisma.user.update({
+        where: { id: user.id },
+        data: { avatar: result.secure_url },
       });
     }
 
@@ -138,6 +149,7 @@ export class WorkspaceMemberService {
       role?: "owner" | "admin" | "member";
       status?: string;
       presence?: string;
+      avatarBuffer?: Buffer;
     }
   ) {
     // Verify member exists in this workspace
@@ -147,6 +159,15 @@ export class WorkspaceMemberService {
 
     if (!member) {
       throw new ApiError(404, "Member not found in this workspace.");
+    }
+
+    // Upload avatar if provided
+    if (data.avatarBuffer) {
+      const result = await uploadToCloudinary(data.avatarBuffer, "collabx/avatars");
+      await prisma.user.update({
+        where: { id: member.userId },
+        data: { avatar: result.secure_url },
+      });
     }
 
     return prisma.workspaceMember.update({
