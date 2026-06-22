@@ -4,6 +4,8 @@ import cookieParser from "cookie-parser";
 import { errorHandler } from "./middlewares/errorHandler";
 import authRoutes from "./routes/auth.routes";
 import workspaceRoutes from "./routes/workspace.routes";
+import notificationRoutes from "./modules/notifications/notification.routes";
+import inboxRoutes from "./modules/inbox/inbox.routes";
 
 const app = express();
 
@@ -26,6 +28,10 @@ app.use("/api/v1/auth", authRoutes);
 
 // Workspace Routes
 app.use("/api/v1/workspaces", workspaceRoutes);
+
+// Notification and Inbox Routes
+app.use("/api/v1/workspaces/:workspaceId/notifications", notificationRoutes);
+app.use("/api/v1/workspaces/:workspaceId/inbox", inboxRoutes);
 
 // Global error handler
 app.use(errorHandler);

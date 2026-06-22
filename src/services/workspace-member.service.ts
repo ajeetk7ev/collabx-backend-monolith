@@ -2,6 +2,8 @@ import { prisma } from "../config/prisma";
 import { ApiError } from "../utils/ApiError";
 import { uploadToCloudinary } from "../config/cloudinary";
 import bcrypt from "bcryptjs";
+import { publishEvent } from "../shared/kafka/producer";
+import { TOPICS } from "../shared/kafka/topics";
 
 export class WorkspaceMemberService {
   static async addMember(
@@ -15,7 +17,8 @@ export class WorkspaceMemberService {
       status: string;
       presence: string;
       avatarBuffer?: Buffer;
-    }
+    },
+    actorId?: number
   ) {
     let user = await prisma.user.findUnique({ where: { email: data.email } });
 
@@ -77,6 +80,40 @@ export class WorkspaceMemberService {
         },
       },
     });
+
+    // Publish event
+    try {
+      const workspace = await prisma.workspace.findUnique({ where: { id: workspaceId } });
+      const workspaceName = workspace ? workspace.name : "Workspace";
+
+      await publishEvent(TOPICS.WORKSPACE_INVITED, {
+        workspaceId,
+        recipientId: member.userId,
+        actorId: actorId || workspace?.ownerId || 0,
+        title: "Invited to Workspace",
+        description: `You have been added to the workspace "${workspaceName}" as a ${member.role}.`,
+        metadata: {
+          role: member.role,
+          workspaceName,
+        },
+      });
+
+      if (member.status === "active") {
+        await publishEvent(TOPICS.MEMBER_JOINED, {
+          workspaceId,
+          recipientId: workspace?.ownerId || 0,
+          actorId: member.userId,
+          title: "New Member Joined",
+          description: `${member.user.firstname} ${member.user.lastname} has joined the workspace "${workspaceName}".`,
+          metadata: {
+            memberId: member.id,
+            email: member.user.email,
+          },
+        });
+      }
+    } catch (err) {
+      console.error("Failed to publish workspace membership Kafka events:", err);
+    }
 
     return member;
   }
@@ -150,7 +187,8 @@ export class WorkspaceMemberService {
       status?: string;
       presence?: string;
       avatarBuffer?: Buffer;
-    }
+    },
+    actorId?: number
   ) {
     // Verify member exists in this workspace
     const member = await prisma.workspaceMember.findFirst({
@@ -161,6 +199,8 @@ export class WorkspaceMemberService {
       throw new ApiError(404, "Member not found in this workspace.");
     }
 
+    const oldRole = member.role;
+
     // Upload avatar if provided
     if (data.avatarBuffer) {
       const result = await uploadToCloudinary(data.avatarBuffer, "collabx/avatars");
@@ -170,7 +210,7 @@ export class WorkspaceMemberService {
       });
     }
 
-    return prisma.workspaceMember.update({
+    const updatedMember = await prisma.workspaceMember.update({
       where: { id: memberId },
       data: {
         ...(data.role && { role: data.role as any }),
@@ -189,6 +229,28 @@ export class WorkspaceMemberService {
         },
       },
     });
+
+    // Publish event if role changed
+    if (data.role && oldRole !== data.role) {
+      try {
+        const workspace = await prisma.workspace.findUnique({ where: { id: workspaceId } });
+        await publishEvent(TOPICS.ROLE_CHANGED, {
+          workspaceId,
+          recipientId: updatedMember.userId,
+          actorId: actorId || workspace?.ownerId || 0,
+          title: "Workspace Role Updated",
+          description: `Your role in the workspace "${workspace?.name || 'Workspace'}" was updated to ${data.role}.`,
+          metadata: {
+            oldRole,
+            newRole: data.role,
+          },
+        });
+      } catch (err) {
+        console.error("Failed to publish ROLE_CHANGED Kafka event:", err);
+      }
+    }
+
+    return updatedMember;
   }
 
   static async removeMember(workspaceId: number, memberId: number) {

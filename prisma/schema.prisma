@@ -31,18 +31,25 @@ model User {
   updatedAt        DateTime    @updatedAt
   ownedWorkspaces  Workspace[]       @relation("WorkspaceOwner")
   workspaceMembers WorkspaceMember[]
+
+  receivedNotifications Notification[]    @relation("NotificationRecipient")
+  actedNotifications    Notification[]    @relation("NotificationActor")
+  inboxItems            InboxItem[]       @relation("InboxUser")
+  actedInboxItems       InboxItem[]       @relation("InboxActor")
 }
 
 model Workspace {
-  id        Int      @id @default(autoincrement())
-  name      String
-  slug      String   @unique
-  logo      String?
-  ownerId   Int
-  owner     User     @relation("WorkspaceOwner", fields: [ownerId], references: [id])
-  members   WorkspaceMember[]
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id            Int               @id @default(autoincrement())
+  name          String
+  slug          String            @unique
+  logo          String?
+  ownerId       Int
+  owner         User              @relation("WorkspaceOwner", fields: [ownerId], references: [id])
+  members       WorkspaceMember[]
+  notifications Notification[]
+  inboxItems    InboxItem[]
+  createdAt     DateTime          @default(now())
+  updatedAt     DateTime          @updatedAt
 }
 
 model WorkspaceMember {
@@ -58,4 +65,60 @@ model WorkspaceMember {
   updatedAt   DateTime @updatedAt
 
   @@unique([userId, workspaceId])
+}
+
+enum NotificationType {
+  MENTION
+  TASK_ASSIGNED
+  TASK_COMPLETED
+  THREAD_REPLY
+  FILE_SHARED
+  CHANNEL_INVITED
+  WORKSPACE_INVITED
+  ROLE_CHANGED
+  REACTION_RECEIVED
+  SYSTEM
+}
+
+model Notification {
+  id           Int              @id @default(autoincrement())
+  workspaceId  Int
+  recipientId  Int
+  actorId      Int
+  type         NotificationType
+  title        String
+  description  String?
+  entityType   String?
+  entityId     Int?
+  metadata     Json?
+  isRead       Boolean          @default(false)
+  createdAt    DateTime         @default(now())
+  updatedAt    DateTime         @updatedAt
+
+  workspace    Workspace        @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  recipient    User             @relation("NotificationRecipient", fields: [recipientId], references: [id], onDelete: Cascade)
+  actor        User             @relation("NotificationActor", fields: [actorId], references: [id], onDelete: Cascade)
+
+  @@index([recipientId, workspaceId, isRead])
+}
+
+model InboxItem {
+  id           Int              @id @default(autoincrement())
+  workspaceId  Int
+  userId       Int
+  actorId      Int
+  type         NotificationType
+  title        String
+  description  String?
+  entityType   String?
+  entityId     Int?
+  metadata     Json?
+  isRead       Boolean          @default(false)
+  createdAt    DateTime         @default(now())
+
+  workspace    Workspace        @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  user         User             @relation("InboxUser", fields: [userId], references: [id], onDelete: Cascade)
+  actor        User             @relation("InboxActor", fields: [actorId], references: [id], onDelete: Cascade)
+
+  @@index([userId, workspaceId])
 }

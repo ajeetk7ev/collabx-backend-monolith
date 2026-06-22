@@ -14,16 +14,20 @@ export class WorkspaceMemberController {
       return;
     }
 
-    const member = await WorkspaceMemberService.addMember(workspaceId, {
-      firstname,
-      lastname,
-      email,
-      password,
-      role,
-      status,
-      presence,
-      ...(req.file && { avatarBuffer: req.file.buffer }),
-    });
+    const member = await WorkspaceMemberService.addMember(
+      workspaceId,
+      {
+        firstname,
+        lastname,
+        email,
+        password,
+        role,
+        status,
+        presence,
+        ...(req.file && { avatarBuffer: req.file.buffer }),
+      },
+      req.user!.id
+    );
 
     res
       .status(201)
@@ -73,6 +77,7 @@ export class WorkspaceMemberController {
         presence,
         ...(req.file && { avatarBuffer: req.file.buffer }),
       },
+      req.user!.id
     );
 
     res

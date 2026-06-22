@@ -254,3 +254,63 @@ Transaction API error: Unable to start a transaction in the given time.
     at zr.handleAndLogRequestError (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:183:12)
     at zr.request (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:152:12)
     at async a (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:963:24)
+[2026-06-22 16:00:21:021] [ERROR]: GET /api/v1/workspaces - Status: 401 - Message: Access token is missing. Please log in.
+[2026-06-22 16:00:21:021] [ERROR]: Error: Access token is missing. Please log in.
+    at authenticate (D:\DevCollab\collabx-backend\src\middlewares\auth.middleware.ts:30:11)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (D:\DevCollab\collabx-backend\node_modules\router\index.js:342:13)
+    at D:\DevCollab\collabx-backend\node_modules\router\index.js:297:9
+    at processParams (D:\DevCollab\collabx-backend\node_modules\router\index.js:582:12)
+    at next (D:\DevCollab\collabx-backend\node_modules\router\index.js:291:5)
+    at Function.handle (D:\DevCollab\collabx-backend\node_modules\router\index.js:186:3)
+    at router (D:\DevCollab\collabx-backend\node_modules\router\index.js:60:12)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (D:\DevCollab\collabx-backend\node_modules\router\index.js:342:13)
+[2026-06-22 16:00:21:021] [ERROR]: GET /api/v1/workspaces - Status: 401 - Message: Access token is missing. Please log in.
+[2026-06-22 16:00:21:021] [ERROR]: Error: Access token is missing. Please log in.
+    at authenticate (D:\DevCollab\collabx-backend\src\middlewares\auth.middleware.ts:30:11)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (D:\DevCollab\collabx-backend\node_modules\router\index.js:342:13)
+    at D:\DevCollab\collabx-backend\node_modules\router\index.js:297:9
+    at processParams (D:\DevCollab\collabx-backend\node_modules\router\index.js:582:12)
+    at next (D:\DevCollab\collabx-backend\node_modules\router\index.js:291:5)
+    at Function.handle (D:\DevCollab\collabx-backend\node_modules\router\index.js:186:3)
+    at router (D:\DevCollab\collabx-backend\node_modules\router\index.js:60:12)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (D:\DevCollab\collabx-backend\node_modules\router\index.js:342:13)
+[2026-06-22 16:00:22:022] [ERROR]: POST /api/v1/auth/refresh - Status: 401 - Message: Refresh token is missing
+[2026-06-22 16:00:22:022] [ERROR]: Error: Refresh token is missing
+    at Function.refresh (D:\DevCollab\collabx-backend\src\services\auth.service.ts:113:13)
+    at refresh (D:\DevCollab\collabx-backend\src\controllers\auth.controller.ts:72:67)
+    at D:\DevCollab\collabx-backend\src\utils\asyncHandler.ts:7:21
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\DevCollab\collabx-backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\DevCollab\collabx-backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\DevCollab\collabx-backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at D:\DevCollab\collabx-backend\node_modules\router\index.js:295:15
+    at processParams (D:\DevCollab\collabx-backend\node_modules\router\index.js:582:12)
+[2026-06-22 17:04:25:425] [INFO]: Kafka consumer event handlers registered for Notification and Inbox Modules
+[2026-06-22 17:04:25:425] [INFO]: Initializing Kafka connection...
+[2026-06-22 17:04:25:425] [INFO]: Successfully connected to Redis at: redis://127.0.0.1:6379
+[2026-06-22 17:04:35:435] [ERROR]: Failed to connect Kafka Producer: Connection error: 
+[2026-06-22 17:04:35:435] [ERROR]: Kafka initialization failed. Server starting without active Kafka connection: Connection error: 
+[2026-06-22 17:04:35:435] [INFO]: Connecting to RabbitMQ...
+[2026-06-22 17:04:35:435] [ERROR]: Failed to connect RabbitMQ. Continuing server boot:
+[2026-06-22 17:04:35:435] [INFO]: Server is running on port 5001
+[2026-06-22 17:06:46:646] [INFO]: Kafka consumer event handlers registered for Notification and Inbox Modules
+[2026-06-22 17:06:46:646] [INFO]: Initializing Kafka connection...
+[2026-06-22 17:06:46:646] [INFO]: Successfully connected to Redis at: redis://127.0.0.1:6379
+[2026-06-22 17:06:53:653] [ERROR]: Failed to connect Kafka Producer: Connection error: 
+[2026-06-22 17:06:53:653] [ERROR]: Kafka initialization failed. Server starting without active Kafka connection: Connection error: 
+[2026-06-22 17:06:53:653] [INFO]: Connecting to RabbitMQ...
+[2026-06-22 17:06:53:653] [ERROR]: Failed to connect RabbitMQ. Continuing server boot:
+[2026-06-22 17:06:53:653] [INFO]: Server is running on port 5001
+[2026-06-22 17:12:05:125] [INFO]: Kafka consumer event handlers registered for Notification and Inbox Modules
+[2026-06-22 17:12:05:125] [INFO]: Initializing Kafka connection...
+[2026-06-22 17:12:05:125] [INFO]: Successfully connected to Redis at: redis://127.0.0.1:6379
+[2026-06-22 17:12:12:1212] [ERROR]: Failed to connect Kafka Producer: Connection error: 
+[2026-06-22 17:12:12:1212] [ERROR]: Kafka initialization failed. Server starting without active Kafka connection: Connection error: 
+[2026-06-22 17:12:12:1212] [INFO]: Connecting to RabbitMQ...
+[2026-06-22 17:12:12:1212] [ERROR]: Failed to connect RabbitMQ. Continuing server boot:
+[2026-06-22 17:12:12:1212] [INFO]: Server is running on port 5001
