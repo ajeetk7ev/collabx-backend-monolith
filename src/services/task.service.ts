@@ -62,6 +62,15 @@ export class TaskService {
             avatar: true,
           },
         },
+        assignee: {
+          select: {
+            id: true,
+            firstname: true,
+            lastname: true,
+            email: true,
+            avatar: true,
+          },
+        },
         comments: {
           include: {
             author: {
@@ -113,6 +122,13 @@ export class TaskService {
         assigneeId: assigneeMemberId ? String(assigneeMemberId) : undefined,
         creatorId: creatorMemberId ? String(creatorMemberId) : String(t.creatorId),
         comments: mappedComments,
+        assignee: t.assignee ? {
+          id: t.assignee.id,
+          firstname: t.assignee.firstname,
+          lastname: t.assignee.lastname,
+          email: t.assignee.email,
+          avatar: t.assignee.avatar,
+        } : null,
       };
     });
   }
@@ -190,6 +206,15 @@ export class TaskService {
             author: true,
           },
         },
+        assignee: {
+          select: {
+            id: true,
+            firstname: true,
+            lastname: true,
+            email: true,
+            avatar: true,
+          },
+        },
       },
     });
 
@@ -231,6 +256,13 @@ export class TaskService {
       assigneeId: assigneeMemberId ? String(assigneeMemberId) : undefined,
       creatorId: creatorMemberId ? String(creatorMemberId) : String(task.creatorId),
       comments: [],
+      assignee: task.assignee ? {
+        id: task.assignee.id,
+        firstname: task.assignee.firstname,
+        lastname: task.assignee.lastname,
+        email: task.assignee.email,
+        avatar: task.assignee.avatar,
+      } : null,
     };
   }
 
@@ -312,6 +344,15 @@ export class TaskService {
             },
           },
         },
+        assignee: {
+          select: {
+            id: true,
+            firstname: true,
+            lastname: true,
+            email: true,
+            avatar: true,
+          },
+        },
       },
     });
 
@@ -363,6 +404,13 @@ export class TaskService {
       assigneeId: assigneeMemberId ? String(assigneeMemberId) : undefined,
       creatorId: creatorMemberId ? String(creatorMemberId) : String(updated.creatorId),
       comments: mappedComments,
+      assignee: updated.assignee ? {
+        id: updated.assignee.id,
+        firstname: updated.assignee.firstname,
+        lastname: updated.assignee.lastname,
+        email: updated.assignee.email,
+        avatar: updated.assignee.avatar,
+      } : null,
     };
   }
 
@@ -384,6 +432,17 @@ export class TaskService {
     const updated = await prisma.task.update({
       where: { id: taskId },
       data: { status },
+      include: {
+        assignee: {
+          select: {
+            id: true,
+            firstname: true,
+            lastname: true,
+            email: true,
+            avatar: true,
+          },
+        },
+      },
     });
 
     // Map response IDs
@@ -404,6 +463,13 @@ export class TaskService {
       workspaceId: String(updated.workspaceId),
       assigneeId: assigneeMemberId ? String(assigneeMemberId) : undefined,
       creatorId: creatorMemberId ? String(creatorMemberId) : String(updated.creatorId),
+      assignee: updated.assignee ? {
+        id: updated.assignee.id,
+        firstname: updated.assignee.firstname,
+        lastname: updated.assignee.lastname,
+        email: updated.assignee.email,
+        avatar: updated.assignee.avatar,
+      } : null,
     };
   }
 
