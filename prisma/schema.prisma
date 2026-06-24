@@ -36,6 +36,10 @@ model User {
   actedNotifications    Notification[]    @relation("NotificationActor")
   inboxItems            InboxItem[]       @relation("InboxUser")
   actedInboxItems       InboxItem[]       @relation("InboxActor")
+
+  assignedTasks         Task[]            @relation("TaskAssignee")
+  createdTasks          Task[]            @relation("TaskCreator")
+  taskComments          TaskComment[]
 }
 
 model Workspace {
@@ -48,6 +52,7 @@ model Workspace {
   members       WorkspaceMember[]
   notifications Notification[]
   inboxItems    InboxItem[]
+  tasks         Task[]
   createdAt     DateTime          @default(now())
   updatedAt     DateTime          @updatedAt
 }
@@ -121,4 +126,55 @@ model InboxItem {
   actor        User             @relation("InboxActor", fields: [actorId], references: [id], onDelete: Cascade)
 
   @@index([userId, workspaceId])
+}
+
+enum TaskStatus {
+  backlog
+  todo
+  in_progress
+  review
+  done
+}
+
+enum TaskPriority {
+  urgent
+  high
+  medium
+  low
+}
+
+model Task {
+  id          Int           @id @default(autoincrement())
+  key         String        @unique
+  title       String
+  description String?
+  status      TaskStatus    @default(todo)
+  priority    TaskPriority  @default(medium)
+  dueDate     String?
+  labels      Json          @default("[]")
+  workspaceId Int
+  workspace   Workspace     @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  assigneeId  Int?
+  assignee    User?         @relation("TaskAssignee", fields: [assigneeId], references: [id], onDelete: SetNull)
+  creatorId   Int
+  creator     User          @relation("TaskCreator", fields: [creatorId], references: [id], onDelete: Cascade)
+  comments    TaskComment[]
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@index([workspaceId])
+  @@index([assigneeId])
+}
+
+model TaskComment {
+  id        Int      @id @default(autoincrement())
+  taskId    Int
+  task      Task     @relation(fields: [taskId], references: [id], onDelete: Cascade)
+  authorId  Int
+  author    User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  body      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([taskId])
 }

@@ -299,3 +299,171 @@ Transaction API error: Unable to start a transaction in the given time.
 [2026-06-22 17:12:12:1212] [ERROR]: Failed to connect Kafka Producer: Connection error: 
 [2026-06-22 17:12:12:1212] [ERROR]: Kafka initialization failed. Server starting without active Kafka connection: Connection error: 
 [2026-06-22 17:12:12:1212] [ERROR]: Failed to connect RabbitMQ. Continuing server boot:
+[2026-06-22 17:18:52:1852] [ERROR]: Failed to connect Kafka Producer: Connection error: 
+[2026-06-22 17:18:52:1852] [ERROR]: Kafka initialization failed. Server starting without active Kafka connection: Connection error: 
+[2026-06-22 17:23:43:2343] [ERROR]: Failed to connect Kafka Producer: Connection error: 
+[2026-06-22 17:23:43:2343] [ERROR]: Kafka initialization failed. Server starting without active Kafka connection: Connection error: 
+[2026-06-22 17:23:43:2343] [ERROR]: Failed to connect RabbitMQ. Continuing server boot:
+[2026-06-24 21:11:22:1122] [ERROR]: Failed to connect Kafka Producer: Connection error: 
+[2026-06-24 21:11:22:1122] [ERROR]: Kafka initialization failed. Server starting without active Kafka connection: Connection error: 
+[2026-06-24 21:11:22:1122] [ERROR]: Failed to connect RabbitMQ. Continuing server boot:
+[2026-06-24 21:13:43:1343] [ERROR]: Failed to connect Kafka Producer: Connection error: 
+[2026-06-24 21:13:43:1343] [ERROR]: Kafka initialization failed. Server starting without active Kafka connection: Connection error: 
+[2026-06-24 21:26:55:2655] [ERROR]: Failed to start Kafka Consumer: This server does not host this topic-partition
+[2026-06-24 21:32:23:3223] [ERROR]: GET /api/v1/workspaces - Status: 401 - Message: Access token is missing. Please log in.
+[2026-06-24 21:32:23:3223] [ERROR]: Error: Access token is missing. Please log in.
+    at authenticate (D:\DevCollab\collabx-backend\src\middlewares\auth.middleware.ts:30:11)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (D:\DevCollab\collabx-backend\node_modules\router\index.js:342:13)
+    at D:\DevCollab\collabx-backend\node_modules\router\index.js:297:9
+    at processParams (D:\DevCollab\collabx-backend\node_modules\router\index.js:582:12)
+    at next (D:\DevCollab\collabx-backend\node_modules\router\index.js:291:5)
+    at Function.handle (D:\DevCollab\collabx-backend\node_modules\router\index.js:186:3)
+    at router (D:\DevCollab\collabx-backend\node_modules\router\index.js:60:12)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (D:\DevCollab\collabx-backend\node_modules\router\index.js:342:13)
+[2026-06-24 21:32:23:3223] [ERROR]: GET /api/v1/workspaces - Status: 401 - Message: Access token is missing. Please log in.
+[2026-06-24 21:32:23:3223] [ERROR]: Error: Access token is missing. Please log in.
+    at authenticate (D:\DevCollab\collabx-backend\src\middlewares\auth.middleware.ts:30:11)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (D:\DevCollab\collabx-backend\node_modules\router\index.js:342:13)
+    at D:\DevCollab\collabx-backend\node_modules\router\index.js:297:9
+    at processParams (D:\DevCollab\collabx-backend\node_modules\router\index.js:582:12)
+    at next (D:\DevCollab\collabx-backend\node_modules\router\index.js:291:5)
+    at Function.handle (D:\DevCollab\collabx-backend\node_modules\router\index.js:186:3)
+    at router (D:\DevCollab\collabx-backend\node_modules\router\index.js:60:12)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (D:\DevCollab\collabx-backend\node_modules\router\index.js:342:13)
+[2026-06-24 21:32:24:3224] [ERROR]: POST /api/v1/auth/refresh - Status: 401 - Message: Refresh token is missing
+[2026-06-24 21:32:24:3224] [ERROR]: Error: Refresh token is missing
+    at Function.refresh (D:\DevCollab\collabx-backend\src\services\auth.service.ts:113:13)
+    at refresh (D:\DevCollab\collabx-backend\src\controllers\auth.controller.ts:72:67)
+    at D:\DevCollab\collabx-backend\src\utils\asyncHandler.ts:7:21
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\DevCollab\collabx-backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\DevCollab\collabx-backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\DevCollab\collabx-backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at D:\DevCollab\collabx-backend\node_modules\router\index.js:295:15
+    at processParams (D:\DevCollab\collabx-backend\node_modules\router\index.js:582:12)
+[2026-06-24 21:32:51:3251] [ERROR]: POST /api/v1/auth/signin - Status: 401 - Message: Invalid email or password
+[2026-06-24 21:32:51:3251] [ERROR]: Error: Invalid email or password
+    at Function.signIn (D:\DevCollab\collabx-backend\src\services\auth.service.ts:64:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async signIn (D:\DevCollab\collabx-backend\src\controllers\auth.controller.ts:25:64)
+[2026-06-24 21:32:51:3251] [ERROR]: POST /api/v1/auth/refresh - Status: 401 - Message: Refresh token is missing
+[2026-06-24 21:32:51:3251] [ERROR]: Error: Refresh token is missing
+    at Function.refresh (D:\DevCollab\collabx-backend\src\services\auth.service.ts:113:13)
+    at refresh (D:\DevCollab\collabx-backend\src\controllers\auth.controller.ts:72:67)
+    at D:\DevCollab\collabx-backend\src\utils\asyncHandler.ts:7:21
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\DevCollab\collabx-backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\DevCollab\collabx-backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\DevCollab\collabx-backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at D:\DevCollab\collabx-backend\node_modules\router\index.js:295:15
+    at processParams (D:\DevCollab\collabx-backend\node_modules\router\index.js:582:12)
+[2026-06-24 21:32:55:3255] [ERROR]: POST /api/v1/auth/signin - Status: 401 - Message: Invalid email or password
+[2026-06-24 21:32:55:3255] [ERROR]: Error: Invalid email or password
+    at Function.signIn (D:\DevCollab\collabx-backend\src\services\auth.service.ts:64:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async signIn (D:\DevCollab\collabx-backend\src\controllers\auth.controller.ts:25:64)
+[2026-06-24 21:32:55:3255] [ERROR]: POST /api/v1/auth/refresh - Status: 401 - Message: Refresh token is missing
+[2026-06-24 21:32:55:3255] [ERROR]: Error: Refresh token is missing
+    at Function.refresh (D:\DevCollab\collabx-backend\src\services\auth.service.ts:113:13)
+    at refresh (D:\DevCollab\collabx-backend\src\controllers\auth.controller.ts:72:67)
+    at D:\DevCollab\collabx-backend\src\utils\asyncHandler.ts:7:21
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\DevCollab\collabx-backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\DevCollab\collabx-backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\DevCollab\collabx-backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at D:\DevCollab\collabx-backend\node_modules\router\index.js:295:15
+    at processParams (D:\DevCollab\collabx-backend\node_modules\router\index.js:582:12)
+[2026-06-24 21:32:58:3258] [ERROR]: POST /api/v1/auth/signin - Status: 401 - Message: Invalid email or password
+[2026-06-24 21:32:58:3258] [ERROR]: Error: Invalid email or password
+    at Function.signIn (D:\DevCollab\collabx-backend\src\services\auth.service.ts:64:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async signIn (D:\DevCollab\collabx-backend\src\controllers\auth.controller.ts:25:64)
+[2026-06-24 21:32:58:3258] [ERROR]: POST /api/v1/auth/refresh - Status: 401 - Message: Refresh token is missing
+[2026-06-24 21:32:58:3258] [ERROR]: Error: Refresh token is missing
+    at Function.refresh (D:\DevCollab\collabx-backend\src\services\auth.service.ts:113:13)
+    at refresh (D:\DevCollab\collabx-backend\src\controllers\auth.controller.ts:72:67)
+    at D:\DevCollab\collabx-backend\src\utils\asyncHandler.ts:7:21
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\DevCollab\collabx-backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\DevCollab\collabx-backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\DevCollab\collabx-backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at D:\DevCollab\collabx-backend\node_modules\router\index.js:295:15
+    at processParams (D:\DevCollab\collabx-backend\node_modules\router\index.js:582:12)
+[2026-06-24 21:33:03:333] [ERROR]: POST /api/v1/auth/signin - Status: 401 - Message: Invalid email or password
+[2026-06-24 21:33:03:333] [ERROR]: Error: Invalid email or password
+    at Function.signIn (D:\DevCollab\collabx-backend\src\services\auth.service.ts:64:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async signIn (D:\DevCollab\collabx-backend\src\controllers\auth.controller.ts:25:64)
+[2026-06-24 21:33:03:333] [ERROR]: POST /api/v1/auth/refresh - Status: 401 - Message: Refresh token is missing
+[2026-06-24 21:33:03:333] [ERROR]: Error: Refresh token is missing
+    at Function.refresh (D:\DevCollab\collabx-backend\src\services\auth.service.ts:113:13)
+    at refresh (D:\DevCollab\collabx-backend\src\controllers\auth.controller.ts:72:67)
+    at D:\DevCollab\collabx-backend\src\utils\asyncHandler.ts:7:21
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\DevCollab\collabx-backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\DevCollab\collabx-backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\DevCollab\collabx-backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at D:\DevCollab\collabx-backend\node_modules\router\index.js:295:15
+    at processParams (D:\DevCollab\collabx-backend\node_modules\router\index.js:582:12)
+[2026-06-24 21:33:06:336] [ERROR]: POST /api/v1/auth/signin - Status: 401 - Message: Invalid email or password
+[2026-06-24 21:33:06:336] [ERROR]: Error: Invalid email or password
+    at Function.signIn (D:\DevCollab\collabx-backend\src\services\auth.service.ts:64:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async signIn (D:\DevCollab\collabx-backend\src\controllers\auth.controller.ts:25:64)
+[2026-06-24 21:33:06:336] [ERROR]: POST /api/v1/auth/refresh - Status: 401 - Message: Refresh token is missing
+[2026-06-24 21:33:06:336] [ERROR]: Error: Refresh token is missing
+    at Function.refresh (D:\DevCollab\collabx-backend\src\services\auth.service.ts:113:13)
+    at refresh (D:\DevCollab\collabx-backend\src\controllers\auth.controller.ts:72:67)
+    at D:\DevCollab\collabx-backend\src\utils\asyncHandler.ts:7:21
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\DevCollab\collabx-backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\DevCollab\collabx-backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\DevCollab\collabx-backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at D:\DevCollab\collabx-backend\node_modules\router\index.js:295:15
+    at processParams (D:\DevCollab\collabx-backend\node_modules\router\index.js:582:12)
+[2026-06-24 21:35:50:3550] [ERROR]: Error creating notification from event: 
+Invalid `prisma.notification.create()` invocation in
+D:\DevCollab\collabx-backend\src\modules\notifications\notification.repository.ts:6:32
+
+  3 
+  4 export class NotificationRepository {
+  5   static async create(data: CreateNotificationInput) {
+→ 6     return prisma.notification.create(
+The table `public.Notification` does not exist in the current database.
+[2026-06-24 21:35:50:3550] [ERROR]: Error processing message from topic "workspace.invited": 
+Invalid `prisma.notification.create()` invocation in
+D:\DevCollab\collabx-backend\src\modules\notifications\notification.repository.ts:6:32
+
+  3 
+  4 export class NotificationRepository {
+  5   static async create(data: CreateNotificationInput) {
+→ 6     return prisma.notification.create(
+The table `public.Notification` does not exist in the current database.
+[2026-06-24 21:35:52:3552] [ERROR]: Error creating notification from event: 
+Invalid `prisma.notification.create()` invocation in
+D:\DevCollab\collabx-backend\src\modules\notifications\notification.repository.ts:6:32
+
+  3 
+  4 export class NotificationRepository {
+  5   static async create(data: CreateNotificationInput) {
+→ 6     return prisma.notification.create(
+The table `public.Notification` does not exist in the current database.
+[2026-06-24 21:35:52:3552] [ERROR]: Error processing message from topic "member.joined": 
+Invalid `prisma.notification.create()` invocation in
+D:\DevCollab\collabx-backend\src\modules\notifications\notification.repository.ts:6:32
+
+  3 
+  4 export class NotificationRepository {
+  5   static async create(data: CreateNotificationInput) {
+→ 6     return prisma.notification.create(
+The table `public.Notification` does not exist in the current database.
