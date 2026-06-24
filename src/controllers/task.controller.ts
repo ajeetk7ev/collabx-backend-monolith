@@ -7,11 +7,12 @@ import { ApiError } from "../utils/ApiError";
 export class TaskController {
   static async listTasks(req: AuthRequest, res: Response): Promise<void> {
     const workspaceId = parseInt(req.params.workspaceId as string, 10);
+    const userId = req.user!.id;
     if (isNaN(workspaceId)) {
       throw new ApiError(400, "Invalid workspace ID parameter.");
     }
 
-    const tasks = await TaskService.listTasks(workspaceId);
+    const tasks = await TaskService.listTasks(workspaceId, userId);
 
     // Map labels from JSON string back to array if stored as string
     const mappedTasks = tasks.map((t) => {

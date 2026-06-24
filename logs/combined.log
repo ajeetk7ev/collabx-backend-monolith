@@ -603,3 +603,90 @@ The table `public.Notification` does not exist in the current database.
 [2026-06-24 21:51:03:513] [INFO]: Kafka Consumer subscribed to topic: member.joined
 [2026-06-24 21:51:03:513] [INFO]: Kafka Consumer subscribed to topic: role.changed
 [2026-06-24 21:51:03:513] [INFO]: Kafka Consumer subscribed to topic: inbox.created
+[2026-06-24 21:54:17:5417] [INFO]: Kafka consumer event handlers registered for Notification and Inbox Modules
+[2026-06-24 21:54:17:5417] [INFO]: Initializing Kafka connection...
+[2026-06-24 21:54:18:5418] [INFO]: Successfully connected to Redis at: redis://127.0.0.1:6379
+[2026-06-24 21:54:18:5418] [INFO]: Kafka Producer connected successfully
+[2026-06-24 21:54:18:5418] [INFO]: Kafka Consumer connected successfully
+[2026-06-24 21:54:18:5418] [INFO]: Kafka Consumer subscribed to topic: notification.created
+[2026-06-24 21:54:18:5418] [INFO]: Kafka Consumer subscribed to topic: workspace.invited
+[2026-06-24 21:54:18:5418] [INFO]: Kafka Consumer subscribed to topic: member.joined
+[2026-06-24 21:54:18:5418] [INFO]: Kafka Consumer subscribed to topic: role.changed
+[2026-06-24 21:54:18:5418] [INFO]: Kafka Consumer subscribed to topic: inbox.created
+[2026-06-24 21:54:21:5421] [INFO]: Kafka initialized successfully
+[2026-06-24 21:54:21:5421] [INFO]: Connecting to RabbitMQ...
+[2026-06-24 21:54:21:5421] [INFO]: Successfully connected to RabbitMQ at: amqp://localhost:5672
+[2026-06-24 21:54:21:5421] [INFO]: RabbitMQ asserted queue: notification-emails
+[2026-06-24 21:54:21:5421] [INFO]: RabbitMQ asserted queue: workspace-invite-emails
+[2026-06-24 21:54:21:5421] [INFO]: RabbitMQ asserted queue: daily-digest
+[2026-06-24 21:54:21:5421] [INFO]: RabbitMQ workers started successfully
+[2026-06-24 21:54:21:5421] [INFO]: Server is running on port 5001
+[2026-06-24 22:02:02:22] [INFO]: Kafka received message from topic "notification.created"
+[2026-06-24 22:02:02:22] [INFO]: Processing event "TASK_ASSIGNED" for recipient ID 2
+[2026-06-24 22:02:14:214] [INFO]: [Worker: notification-emails] Sending email alert to ajeet12@gmail.com for type TASK_ASSIGNED
+[2026-06-24 22:19:50:1950] [INFO]: Kafka received message from topic "notification.created"
+[2026-06-24 22:19:50:1950] [INFO]: Processing event "TASK_ASSIGNED" for recipient ID 2
+[2026-06-24 22:19:58:1958] [INFO]: [Worker: notification-emails] Sending email alert to ajeet12@gmail.com for type TASK_ASSIGNED
+[2026-06-24 22:27:09:279] [INFO]: Kafka received message from topic "workspace.invited"
+[2026-06-24 22:27:09:279] [INFO]: Processing event "WORKSPACE_INVITED" for recipient ID 3
+[2026-06-24 22:27:13:2713] [INFO]: [Worker: workspace-invite-emails] Sending workspace invitation email to rajan12@gmail.com
+[2026-06-24 22:27:13:2713] [INFO]: Kafka received message from topic "member.joined"
+[2026-06-24 22:27:13:2713] [INFO]: Processing event "SYSTEM" for recipient ID 1
+[2026-06-24 22:27:17:2717] [INFO]: [Worker: notification-emails] Sending email alert to amit@gmail.com for type SYSTEM
+[2026-06-24 22:27:37:2737] [ERROR]: GET /api/v1/workspaces - Status: 401 - Message: Access token is missing. Please log in.
+[2026-06-24 22:27:37:2737] [ERROR]: Error: Access token is missing. Please log in.
+    at authenticate (D:\DevCollab\collabx-backend\src\middlewares\auth.middleware.ts:30:11)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (D:\DevCollab\collabx-backend\node_modules\router\index.js:342:13)
+    at D:\DevCollab\collabx-backend\node_modules\router\index.js:297:9
+    at processParams (D:\DevCollab\collabx-backend\node_modules\router\index.js:582:12)
+    at next (D:\DevCollab\collabx-backend\node_modules\router\index.js:291:5)
+    at Function.handle (D:\DevCollab\collabx-backend\node_modules\router\index.js:186:3)
+    at router (D:\DevCollab\collabx-backend\node_modules\router\index.js:60:12)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (D:\DevCollab\collabx-backend\node_modules\router\index.js:342:13)
+[2026-06-24 22:27:37:2737] [ERROR]: GET /api/v1/workspaces - Status: 401 - Message: Access token is missing. Please log in.
+[2026-06-24 22:27:37:2737] [ERROR]: Error: Access token is missing. Please log in.
+    at authenticate (D:\DevCollab\collabx-backend\src\middlewares\auth.middleware.ts:30:11)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (D:\DevCollab\collabx-backend\node_modules\router\index.js:342:13)
+    at D:\DevCollab\collabx-backend\node_modules\router\index.js:297:9
+    at processParams (D:\DevCollab\collabx-backend\node_modules\router\index.js:582:12)
+    at next (D:\DevCollab\collabx-backend\node_modules\router\index.js:291:5)
+    at Function.handle (D:\DevCollab\collabx-backend\node_modules\router\index.js:186:3)
+    at router (D:\DevCollab\collabx-backend\node_modules\router\index.js:60:12)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (D:\DevCollab\collabx-backend\node_modules\router\index.js:342:13)
+[2026-06-24 22:27:37:2737] [ERROR]: POST /api/v1/auth/refresh - Status: 401 - Message: Refresh token is missing
+[2026-06-24 22:27:37:2737] [ERROR]: Error: Refresh token is missing
+    at Function.refresh (D:\DevCollab\collabx-backend\src\services\auth.service.ts:113:13)
+    at refresh (D:\DevCollab\collabx-backend\src\controllers\auth.controller.ts:72:67)
+    at D:\DevCollab\collabx-backend\src\utils\asyncHandler.ts:7:21
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\DevCollab\collabx-backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\DevCollab\collabx-backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\DevCollab\collabx-backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at D:\DevCollab\collabx-backend\node_modules\router\index.js:295:15
+    at processParams (D:\DevCollab\collabx-backend\node_modules\router\index.js:582:12)
+[2026-06-24 22:31:24:3124] [INFO]: Kafka consumer event handlers registered for Notification and Inbox Modules
+[2026-06-24 22:31:24:3124] [INFO]: Initializing Kafka connection...
+[2026-06-24 22:31:24:3124] [INFO]: Successfully connected to Redis at: redis://127.0.0.1:6379
+[2026-06-24 22:31:24:3124] [INFO]: Kafka Producer connected successfully
+[2026-06-24 22:31:24:3124] [INFO]: Kafka Consumer connected successfully
+[2026-06-24 22:31:24:3124] [INFO]: Kafka Consumer subscribed to topic: notification.created
+[2026-06-24 22:31:24:3124] [INFO]: Kafka Consumer subscribed to topic: workspace.invited
+[2026-06-24 22:31:24:3124] [INFO]: Kafka Consumer subscribed to topic: member.joined
+[2026-06-24 22:31:24:3124] [INFO]: Kafka Consumer subscribed to topic: role.changed
+[2026-06-24 22:31:24:3124] [INFO]: Kafka Consumer subscribed to topic: inbox.created
+[2026-06-24 22:31:39:3139] [INFO]: Kafka initialized successfully
+[2026-06-24 22:31:39:3139] [INFO]: Connecting to RabbitMQ...
+[2026-06-24 22:31:39:3139] [INFO]: Successfully connected to RabbitMQ at: amqp://localhost:5672
+[2026-06-24 22:31:39:3139] [INFO]: RabbitMQ asserted queue: notification-emails
+[2026-06-24 22:31:39:3139] [INFO]: RabbitMQ asserted queue: workspace-invite-emails
+[2026-06-24 22:31:39:3139] [INFO]: RabbitMQ asserted queue: daily-digest
+[2026-06-24 22:31:39:3139] [INFO]: RabbitMQ workers started successfully
+[2026-06-24 22:31:39:3139] [INFO]: Server is running on port 5001
+[2026-06-24 22:32:50:3250] [INFO]: Kafka received message from topic "notification.created"
+[2026-06-24 22:32:50:3250] [INFO]: Processing event "TASK_ASSIGNED" for recipient ID 3
+[2026-06-24 22:32:59:3259] [INFO]: [Worker: notification-emails] Sending email alert to rajan12@gmail.com for type TASK_ASSIGNED

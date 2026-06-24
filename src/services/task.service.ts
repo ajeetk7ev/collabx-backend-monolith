@@ -41,11 +41,17 @@ export class TaskService {
   }
 
   /**
-   * Fetch all tasks in a workspace, including comments and related user details.
+   * Fetch all tasks in a workspace (or only assigned tasks if the user has a member role),
+   * including comments and related user details.
    */
-  static async listTasks(workspaceId: number) {
+  static async listTasks(workspaceId: number, userId: number) {
+    const { isOwnerOrAdmin } = await this.checkWorkspaceRole(workspaceId, userId);
+
     const items = await prisma.task.findMany({
-      where: { workspaceId },
+      where: {
+        workspaceId,
+        ...(!isOwnerOrAdmin && { assigneeId: userId }),
+      },
       include: {
         creator: {
           select: {
