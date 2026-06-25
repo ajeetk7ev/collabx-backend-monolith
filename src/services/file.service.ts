@@ -53,8 +53,17 @@ export class FileService {
     // 1. Verify workspace access
     await this.checkWorkspaceAccess(workspaceId, userId);
 
+    // Determine Cloudinary resource type: images and PDFs as image, videos as video, and everything else as raw
+    let resourceType: "image" | "video" | "raw" = "raw";
+    const mt = file.mimetype.toLowerCase();
+    if (mt.includes("image") || mt.includes("pdf")) {
+      resourceType = "image";
+    } else if (mt.includes("video")) {
+      resourceType = "video";
+    }
+
     // 2. Upload to Cloudinary
-    const uploadResult = await uploadRawFileToCloudinary(file.buffer, file.originalname);
+    const uploadResult = await uploadRawFileToCloudinary(file.buffer, file.originalname, resourceType);
 
     // 3. Format file size
     const sizeInMb = (file.size / (1024 * 1024)).toFixed(1);
@@ -62,7 +71,6 @@ export class FileService {
 
     // 4. Map MIME type to frontend file kinds: "figma" | "pdf" | "image" | "doc" | "video" | "zip" | "sheet"
     let kind: "figma" | "pdf" | "image" | "doc" | "video" | "zip" | "sheet" = "doc";
-    const mt = file.mimetype.toLowerCase();
     if (mt.includes("image")) kind = "image";
     else if (mt.includes("video")) kind = "video";
     else if (mt.includes("pdf")) kind = "pdf";
@@ -163,7 +171,14 @@ export class FileService {
     }
 
     // 4. Delete from Cloudinary
-    await deleteFromCloudinary(file.publicId);
+    let resourceType: "image" | "video" | "raw" = "raw";
+    const mt = file.mimeType.toLowerCase();
+    if (mt.includes("image") || mt.includes("pdf")) {
+      resourceType = "image";
+    } else if (mt.includes("video")) {
+      resourceType = "video";
+    }
+    await deleteFromCloudinary(file.publicId, resourceType);
 
     // 5. Delete from database
     await prisma.file.delete({

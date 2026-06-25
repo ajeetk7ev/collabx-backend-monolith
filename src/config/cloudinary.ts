@@ -44,22 +44,41 @@ export const uploadToCloudinary = (
 };
 
 /**
- * Upload a raw file buffer to Cloudinary with auto resource type.
+ * Upload a file buffer to Cloudinary.
+ * Uses the caller-specified resource_type (image, video, raw) so that
+ * PDFs/docs go through /raw/upload/ and are served as-is.
  */
 export const uploadRawFileToCloudinary = (
   buffer: Buffer,
   filename: string,
+  resourceType: "image" | "video" | "raw" = "raw",
   folder: string = "collabx/files",
 ): Promise<{ secure_url: string; public_id: string }> => {
   return new Promise((resolve, reject) => {
+    const options: any = {
+      folder,
+      resource_type: resourceType,
+    };
+
+    if (resourceType === "raw") {
+      const extIndex = filename.lastIndexOf(".");
+      const name = extIndex !== -1 ? filename.substring(0, extIndex) : filename;
+      const ext = extIndex !== -1 ? filename.substring(extIndex) : "";
+      
+      const cleanName = name
+        .replace(/[^a-zA-Z0-9-_]/g, "_")
+        .replace(/_+/g, "_");
+        
+      const uniqueSuffix = Math.random().toString(36).substring(2, 8);
+      // For raw resources, the public_id MUST include the extension to be served with the correct Content-Type.
+      options.public_id = `${cleanName}_${uniqueSuffix}${ext}`;
+    } else {
+      options.use_filename = true;
+      options.unique_filename = true;
+    }
+
     const stream = cloudinary.uploader.upload_stream(
-      {
-        folder,
-        resource_type: "auto",
-        public_id: filename.substring(0, filename.lastIndexOf(".")) || filename,
-        use_filename: true,
-        unique_filename: true,
-      },
+      options,
       (error, result) => {
         if (error || !result) {
           reject(new ApiError(500, "Failed to upload file to Cloudinary."));
@@ -76,11 +95,16 @@ export const uploadRawFileToCloudinary = (
 };
 
 /**
- * Delete an image from Cloudinary by its public ID.
+ * Delete an asset from Cloudinary by its public ID.
+ * Must pass the correct resource_type — destroy defaults to "image",
+ * so raw/video assets would silently fail without it.
  */
-export const deleteFromCloudinary = async (publicId: string): Promise<void> => {
+export const deleteFromCloudinary = async (
+  publicId: string,
+  resourceType: "image" | "video" | "raw" = "image",
+): Promise<void> => {
   try {
-    await cloudinary.uploader.destroy(publicId);
+    await cloudinary.uploader.destroy(publicId, { resource_type: resourceType });
   } catch (error) {
     // Log but don't throw — cleanup failure shouldn't block the operation
     console.error(`Failed to delete Cloudinary asset: ${publicId}`, error);
