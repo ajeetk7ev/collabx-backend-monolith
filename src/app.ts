@@ -6,6 +6,7 @@ import authRoutes from "./routes/auth.routes";
 import workspaceRoutes from "./routes/workspace.routes";
 import notificationRoutes from "./modules/notifications/notification.routes";
 import inboxRoutes from "./modules/inbox/inbox.routes";
+import fileRoutes from "./routes/file.routes";
 
 const app = express();
 
@@ -29,9 +30,10 @@ app.use("/api/v1/auth", authRoutes);
 // Workspace Routes
 app.use("/api/v1/workspaces", workspaceRoutes);
 
-// Notification and Inbox Routes
+// Notification, Inbox and File Routes
 app.use("/api/v1/workspaces/:workspaceId/notifications", notificationRoutes);
 app.use("/api/v1/workspaces/:workspaceId/inbox", inboxRoutes);
+app.use("/api/v1/workspaces/:workspaceId/files", fileRoutes);
 
 // Global error handler
 app.use(errorHandler);

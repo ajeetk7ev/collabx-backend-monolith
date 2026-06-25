@@ -503,3 +503,99 @@ The table `public.Notification` does not exist in the current database.
     at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
     at D:\DevCollab\collabx-backend\node_modules\router\index.js:295:15
     at processParams (D:\DevCollab\collabx-backend\node_modules\router\index.js:582:12)
+[2026-06-24 23:14:59:1459] [ERROR]: GET /api/v1/workspaces/1/tasks - Status: 500 - Message: Connection terminated unexpectedly
+[2026-06-24 23:14:59:1459] [ERROR]: Error: Connection terminated unexpectedly
+    at D:\DevCollab\collabx-backend\node_modules\pg-pool\index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async PrismaPgAdapter.performIO (D:\DevCollab\collabx-backend\node_modules\@prisma\adapter-pg\dist\index.js:654:22)
+    at async PrismaPgAdapter.queryRaw (D:\DevCollab\collabx-backend\node_modules\@prisma\adapter-pg\dist\index.js:604:30)
+    at async e.interpretNode (D:\DevCollab\collabx-backend\node_modules\@prisma\client-engine-runtime\src\interpreter\query-interpreter.ts:186:26)
+    at async e.interpretNode (D:\DevCollab\collabx-backend\node_modules\@prisma\client-engine-runtime\src\interpreter\query-interpreter.ts:213:41)
+    at async e.interpretNode (D:\DevCollab\collabx-backend\node_modules\@prisma\client-engine-runtime\src\interpreter\query-interpreter.ts:272:41)
+    at async e.run (D:\DevCollab\collabx-backend\node_modules\@prisma\client-engine-runtime\src\interpreter\query-interpreter.ts:94:23)
+    at async execute (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\core\engines\client\LocalExecutor.ts:81:12)
+    at async jt.request (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\core\engines\client\ClientEngine.ts:504:22)
+[2026-06-24 23:14:59:1459] [ERROR]: GET /api/v1/workspaces/1/tasks - Status: 500 - Message: Connection terminated unexpectedly
+[2026-06-24 23:14:59:1459] [ERROR]: Error: Connection terminated unexpectedly
+    at D:\DevCollab\collabx-backend\node_modules\pg-pool\index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async PrismaPgAdapter.performIO (D:\DevCollab\collabx-backend\node_modules\@prisma\adapter-pg\dist\index.js:654:22)
+    at async PrismaPgAdapter.queryRaw (D:\DevCollab\collabx-backend\node_modules\@prisma\adapter-pg\dist\index.js:604:30)
+    at async e.interpretNode (D:\DevCollab\collabx-backend\node_modules\@prisma\client-engine-runtime\src\interpreter\query-interpreter.ts:186:26)
+    at async e.interpretNode (D:\DevCollab\collabx-backend\node_modules\@prisma\client-engine-runtime\src\interpreter\query-interpreter.ts:213:41)
+    at async e.interpretNode (D:\DevCollab\collabx-backend\node_modules\@prisma\client-engine-runtime\src\interpreter\query-interpreter.ts:272:41)
+    at async e.run (D:\DevCollab\collabx-backend\node_modules\@prisma\client-engine-runtime\src\interpreter\query-interpreter.ts:94:23)
+    at async execute (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\core\engines\client\LocalExecutor.ts:81:12)
+    at async jt.request (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\core\engines\client\ClientEngine.ts:504:22)
+[2026-06-25 09:41:05:415] [ERROR]: GET /api/v1/workspaces/1/tasks - Status: 401 - Message: Access token is missing. Please log in.
+[2026-06-25 09:41:05:415] [ERROR]: Error: Access token is missing. Please log in.
+    at authenticate (D:\DevCollab\collabx-backend\src\middlewares\auth.middleware.ts:30:11)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (D:\DevCollab\collabx-backend\node_modules\router\index.js:342:13)
+    at D:\DevCollab\collabx-backend\node_modules\router\index.js:297:9
+    at processParams (D:\DevCollab\collabx-backend\node_modules\router\index.js:582:12)
+    at next (D:\DevCollab\collabx-backend\node_modules\router\index.js:291:5)
+    at Function.handle (D:\DevCollab\collabx-backend\node_modules\router\index.js:186:3)
+    at router (D:\DevCollab\collabx-backend\node_modules\router\index.js:60:12)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (D:\DevCollab\collabx-backend\node_modules\router\index.js:342:13)
+[2026-06-25 09:41:05:415] [ERROR]: GET /api/v1/workspaces/1/tasks - Status: 401 - Message: Access token is missing. Please log in.
+[2026-06-25 09:41:05:415] [ERROR]: Error: Access token is missing. Please log in.
+    at authenticate (D:\DevCollab\collabx-backend\src\middlewares\auth.middleware.ts:30:11)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (D:\DevCollab\collabx-backend\node_modules\router\index.js:342:13)
+    at D:\DevCollab\collabx-backend\node_modules\router\index.js:297:9
+    at processParams (D:\DevCollab\collabx-backend\node_modules\router\index.js:582:12)
+    at next (D:\DevCollab\collabx-backend\node_modules\router\index.js:291:5)
+    at Function.handle (D:\DevCollab\collabx-backend\node_modules\router\index.js:186:3)
+    at router (D:\DevCollab\collabx-backend\node_modules\router\index.js:60:12)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (D:\DevCollab\collabx-backend\node_modules\router\index.js:342:13)
+[2026-06-25 09:41:06:416] [ERROR]: POST /api/v1/auth/refresh - Status: 401 - Message: Refresh token is missing
+[2026-06-25 09:41:06:416] [ERROR]: Error: Refresh token is missing
+    at Function.refresh (D:\DevCollab\collabx-backend\src\services\auth.service.ts:113:13)
+    at refresh (D:\DevCollab\collabx-backend\src\controllers\auth.controller.ts:72:67)
+    at D:\DevCollab\collabx-backend\src\utils\asyncHandler.ts:7:21
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\DevCollab\collabx-backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\DevCollab\collabx-backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\DevCollab\collabx-backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at D:\DevCollab\collabx-backend\node_modules\router\index.js:295:15
+    at processParams (D:\DevCollab\collabx-backend\node_modules\router\index.js:582:12)
+[2026-06-25 09:41:28:4128] [ERROR]: POST /api/v1/auth/signin - Status: 401 - Message: Invalid email or password
+[2026-06-25 09:41:28:4128] [ERROR]: Error: Invalid email or password
+    at Function.signIn (D:\DevCollab\collabx-backend\src\services\auth.service.ts:70:13)
+    at async signIn (D:\DevCollab\collabx-backend\src\controllers\auth.controller.ts:25:64)
+[2026-06-25 09:41:28:4128] [ERROR]: POST /api/v1/auth/refresh - Status: 401 - Message: Refresh token is missing
+[2026-06-25 09:41:28:4128] [ERROR]: Error: Refresh token is missing
+    at Function.refresh (D:\DevCollab\collabx-backend\src\services\auth.service.ts:113:13)
+    at refresh (D:\DevCollab\collabx-backend\src\controllers\auth.controller.ts:72:67)
+    at D:\DevCollab\collabx-backend\src\utils\asyncHandler.ts:7:21
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\DevCollab\collabx-backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\DevCollab\collabx-backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\DevCollab\collabx-backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at D:\DevCollab\collabx-backend\node_modules\router\index.js:295:15
+    at processParams (D:\DevCollab\collabx-backend\node_modules\router\index.js:582:12)
+[2026-06-25 10:09:27:927] [ERROR]: GET /api/v1/workspaces/1/files - Status: 403 - Message: You are not a member of this workspace.
+[2026-06-25 10:09:27:927] [ERROR]: Error: You are not a member of this workspace.
+    at Function.listFiles (D:\DevCollab\collabx-backend\src\services\file.service.ts:91:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async listFiles (D:\DevCollab\collabx-backend\src\controllers\file.controller.ts:42:19)
+[2026-06-25 10:09:27:927] [ERROR]: GET /api/v1/workspaces/1/files - Status: 403 - Message: You are not a member of this workspace.
+[2026-06-25 10:09:27:927] [ERROR]: Error: You are not a member of this workspace.
+    at Function.listFiles (D:\DevCollab\collabx-backend\src\services\file.service.ts:91:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async listFiles (D:\DevCollab\collabx-backend\src\controllers\file.controller.ts:42:19)
+[2026-06-25 10:09:38:938] [ERROR]: GET /api/v1/workspaces/1/files - Status: 403 - Message: You are not a member of this workspace.
+[2026-06-25 10:09:38:938] [ERROR]: Error: You are not a member of this workspace.
+    at Function.listFiles (D:\DevCollab\collabx-backend\src\services\file.service.ts:91:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async listFiles (D:\DevCollab\collabx-backend\src\controllers\file.controller.ts:42:19)
+[2026-06-25 10:09:38:938] [ERROR]: GET /api/v1/workspaces/1/files - Status: 403 - Message: You are not a member of this workspace.
+[2026-06-25 10:09:38:938] [ERROR]: Error: You are not a member of this workspace.
+    at Function.listFiles (D:\DevCollab\collabx-backend\src\services\file.service.ts:91:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async listFiles (D:\DevCollab\collabx-backend\src\controllers\file.controller.ts:42:19)

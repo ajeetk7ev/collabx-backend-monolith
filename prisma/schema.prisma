@@ -40,6 +40,7 @@ model User {
   assignedTasks         Task[]            @relation("TaskAssignee")
   createdTasks          Task[]            @relation("TaskCreator")
   taskComments          TaskComment[]
+  files                 File[]            @relation("FileOwner")
 }
 
 model Workspace {
@@ -53,6 +54,7 @@ model Workspace {
   notifications Notification[]
   inboxItems    InboxItem[]
   tasks         Task[]
+  files         File[]
   createdAt     DateTime          @default(now())
   updatedAt     DateTime          @updatedAt
 }
@@ -178,3 +180,24 @@ model TaskComment {
 
   @@index([taskId])
 }
+
+model File {
+  id          Int       @id @default(autoincrement())
+  name        String
+  kind        String    // "figma" | "pdf" | "image" | "doc" | "video" | "zip" | "sheet"
+  size        String
+  mimeType    String
+  url         String
+  publicId    String
+  workspaceId Int
+  workspace   Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  ownerId     Int
+  owner       User      @relation("FileOwner", fields: [ownerId], references: [id], onDelete: Cascade)
+  channelId   Int?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([workspaceId])
+  @@index([ownerId])
+}
+

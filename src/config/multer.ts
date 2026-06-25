@@ -33,3 +33,16 @@ export const upload = multer({
     }
   },
 });
+
+const MAX_GENERIC_FILE_SIZE = 20 * 1024 * 1024; // 20MB
+
+/**
+ * Multer instance configured to accept any file format up to 20MB in memory storage.
+ */
+export const uploadGenericFile = multer({
+  storage: multer.memoryStorage(),
+  limits: {
+    fileSize: MAX_GENERIC_FILE_SIZE,
+  },
+});
+
