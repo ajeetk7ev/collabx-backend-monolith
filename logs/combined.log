@@ -1141,3 +1141,256 @@ The table `public.Notification` does not exist in the current database.
 [2026-06-25 11:31:09:319] [INFO]: RabbitMQ asserted queue: daily-digest
 [2026-06-25 11:31:09:319] [INFO]: RabbitMQ workers started successfully
 [2026-06-25 11:31:09:319] [INFO]: Server is running on port 5001
+[2026-06-25 11:43:08:438] [INFO]: Kafka consumer event handlers registered for Notification and Inbox Modules
+[2026-06-25 11:43:08:438] [INFO]: Initializing Kafka connection...
+[2026-06-25 11:43:08:438] [INFO]: Successfully connected to Redis at: redis://127.0.0.1:6379
+[2026-06-25 11:43:08:438] [INFO]: Kafka Producer connected successfully
+[2026-06-25 11:43:08:438] [INFO]: Kafka Consumer connected successfully
+[2026-06-25 11:43:08:438] [INFO]: Kafka Consumer subscribed to topic: notification.created
+[2026-06-25 11:43:08:438] [INFO]: Kafka Consumer subscribed to topic: workspace.invited
+[2026-06-25 11:43:08:438] [INFO]: Kafka Consumer subscribed to topic: member.joined
+[2026-06-25 11:43:08:438] [INFO]: Kafka Consumer subscribed to topic: role.changed
+[2026-06-25 11:43:08:438] [INFO]: Kafka Consumer subscribed to topic: inbox.created
+[2026-06-25 11:43:26:4326] [INFO]: Kafka initialized successfully
+[2026-06-25 11:43:26:4326] [INFO]: Connecting to RabbitMQ...
+[2026-06-25 11:43:26:4326] [INFO]: Successfully connected to RabbitMQ at: amqp://localhost:5672
+[2026-06-25 11:43:26:4326] [INFO]: RabbitMQ asserted queue: notification-emails
+[2026-06-25 11:43:26:4326] [INFO]: RabbitMQ asserted queue: workspace-invite-emails
+[2026-06-25 11:43:26:4326] [INFO]: RabbitMQ asserted queue: daily-digest
+[2026-06-25 11:43:26:4326] [INFO]: RabbitMQ workers started successfully
+[2026-06-25 11:43:26:4326] [INFO]: Server is running on port 5001
+[2026-06-25 11:52:38:5238] [INFO]: Kafka consumer event handlers registered for Notification and Inbox Modules
+[2026-06-25 11:52:38:5238] [INFO]: Initializing Kafka connection...
+[2026-06-25 11:52:38:5238] [INFO]: Successfully connected to Redis at: redis://127.0.0.1:6379
+[2026-06-25 11:52:38:5238] [INFO]: Kafka Producer connected successfully
+[2026-06-25 11:52:38:5238] [INFO]: Kafka Consumer connected successfully
+[2026-06-25 11:52:38:5238] [INFO]: Kafka Consumer subscribed to topic: notification.created
+[2026-06-25 11:52:38:5238] [INFO]: Kafka Consumer subscribed to topic: workspace.invited
+[2026-06-25 11:52:38:5238] [INFO]: Kafka Consumer subscribed to topic: member.joined
+[2026-06-25 11:52:38:5238] [INFO]: Kafka Consumer subscribed to topic: role.changed
+[2026-06-25 11:52:38:5238] [INFO]: Kafka Consumer subscribed to topic: inbox.created
+[2026-06-25 11:52:42:5242] [INFO]: Kafka initialized successfully
+[2026-06-25 11:52:42:5242] [INFO]: Connecting to RabbitMQ...
+[2026-06-25 11:52:42:5242] [ERROR]: Failed to connect RabbitMQ. Continuing server boot: Socket closed abruptly during opening handshake
+[2026-06-25 11:52:42:5242] [INFO]: Server is running on port 5001
+[2026-06-26 11:34:41:3441] [INFO]: Kafka consumer event handlers registered for Notification and Inbox Modules
+[2026-06-26 11:34:41:3441] [INFO]: Initializing Kafka connection...
+[2026-06-26 11:34:41:3441] [INFO]: Successfully connected to Redis at: redis://127.0.0.1:6379
+[2026-06-26 11:34:42:3442] [INFO]: Kafka Producer connected successfully
+[2026-06-26 11:34:42:3442] [INFO]: Kafka Consumer connected successfully
+[2026-06-26 11:34:42:3442] [INFO]: Kafka Consumer subscribed to topic: notification.created
+[2026-06-26 11:34:42:3442] [INFO]: Kafka Consumer subscribed to topic: workspace.invited
+[2026-06-26 11:34:42:3442] [INFO]: Kafka Consumer subscribed to topic: member.joined
+[2026-06-26 11:34:42:3442] [INFO]: Kafka Consumer subscribed to topic: role.changed
+[2026-06-26 11:34:42:3442] [INFO]: Kafka Consumer subscribed to topic: inbox.created
+[2026-06-26 11:34:46:3446] [INFO]: Kafka initialized successfully
+[2026-06-26 11:34:46:3446] [INFO]: Connecting to RabbitMQ...
+[2026-06-26 11:34:46:3446] [INFO]: Successfully connected to RabbitMQ at: amqp://localhost:5672
+[2026-06-26 11:34:46:3446] [INFO]: RabbitMQ asserted queue: notification-emails
+[2026-06-26 11:34:46:3446] [INFO]: RabbitMQ asserted queue: workspace-invite-emails
+[2026-06-26 11:34:46:3446] [INFO]: RabbitMQ asserted queue: daily-digest
+[2026-06-26 11:34:46:3446] [INFO]: RabbitMQ workers started successfully
+[2026-06-26 11:34:46:3446] [INFO]: Server is running on port 5001
+[2026-06-26 11:43:04:434] [ERROR]: GET /api/v1/workspaces - Status: 401 - Message: Access token is missing. Please log in.
+[2026-06-26 11:43:04:434] [ERROR]: Error: Access token is missing. Please log in.
+    at authenticate (D:\DevCollab\collabx-backend\src\middlewares\auth.middleware.ts:30:11)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (D:\DevCollab\collabx-backend\node_modules\router\index.js:342:13)
+    at D:\DevCollab\collabx-backend\node_modules\router\index.js:297:9
+    at processParams (D:\DevCollab\collabx-backend\node_modules\router\index.js:582:12)
+    at next (D:\DevCollab\collabx-backend\node_modules\router\index.js:291:5)
+    at Function.handle (D:\DevCollab\collabx-backend\node_modules\router\index.js:186:3)
+    at router (D:\DevCollab\collabx-backend\node_modules\router\index.js:60:12)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (D:\DevCollab\collabx-backend\node_modules\router\index.js:342:13)
+[2026-06-26 11:43:04:434] [ERROR]: GET /api/v1/workspaces - Status: 401 - Message: Access token is missing. Please log in.
+[2026-06-26 11:43:04:434] [ERROR]: Error: Access token is missing. Please log in.
+    at authenticate (D:\DevCollab\collabx-backend\src\middlewares\auth.middleware.ts:30:11)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (D:\DevCollab\collabx-backend\node_modules\router\index.js:342:13)
+    at D:\DevCollab\collabx-backend\node_modules\router\index.js:297:9
+    at processParams (D:\DevCollab\collabx-backend\node_modules\router\index.js:582:12)
+    at next (D:\DevCollab\collabx-backend\node_modules\router\index.js:291:5)
+    at Function.handle (D:\DevCollab\collabx-backend\node_modules\router\index.js:186:3)
+    at router (D:\DevCollab\collabx-backend\node_modules\router\index.js:60:12)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (D:\DevCollab\collabx-backend\node_modules\router\index.js:342:13)
+[2026-06-26 11:43:04:434] [ERROR]: POST /api/v1/auth/refresh - Status: 401 - Message: Refresh token is missing
+[2026-06-26 11:43:04:434] [ERROR]: Error: Refresh token is missing
+    at Function.refresh (D:\DevCollab\collabx-backend\src\services\auth.service.ts:113:13)
+    at refresh (D:\DevCollab\collabx-backend\src\controllers\auth.controller.ts:72:67)
+    at D:\DevCollab\collabx-backend\src\utils\asyncHandler.ts:7:21
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\DevCollab\collabx-backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\DevCollab\collabx-backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\DevCollab\collabx-backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at D:\DevCollab\collabx-backend\node_modules\router\index.js:295:15
+    at processParams (D:\DevCollab\collabx-backend\node_modules\router\index.js:582:12)
+[2026-06-26 11:43:27:4327] [ERROR]: POST /api/v1/auth/signin - Status: 500 - Message: 
+Invalid `prisma.user.findUnique()` invocation in
+D:\DevCollab\collabx-backend\src\services\auth.service.ts:59:36
+
+  56 
+  57 static async signIn(email: string, password: string) {
+  58   // Find user by email
+→ 59   const user = await prisma.user.findUnique(
+Server has closed the connection.
+[2026-06-26 11:43:27:4327] [ERROR]: PrismaClientKnownRequestError: 
+Invalid `prisma.user.findUnique()` invocation in
+D:\DevCollab\collabx-backend\src\services\auth.service.ts:59:36
+
+  56 
+  57 static async signIn(email: string, password: string) {
+  58   // Find user by email
+→ 59   const user = await prisma.user.findUnique(
+Server has closed the connection.
+    at zr.handleRequestError (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:237:13)
+    at zr.handleAndLogRequestError (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:183:12)
+    at zr.request (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:152:12)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async a (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:963:24)
+    at async Function.signIn (D:\DevCollab\collabx-backend\src\services\auth.service.ts:59:18)
+    at async signIn (D:\DevCollab\collabx-backend\src\controllers\auth.controller.ts:25:64)
+[2026-06-26 11:44:17:4417] [ERROR]: POST /api/v1/auth/signin - Status: 500 - Message: Connection terminated unexpectedly
+[2026-06-26 11:44:17:4417] [ERROR]: Error: Connection terminated unexpectedly
+    at D:\DevCollab\collabx-backend\node_modules\pg-pool\index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async PrismaPgAdapter.performIO (D:\DevCollab\collabx-backend\node_modules\@prisma\adapter-pg\dist\index.js:654:22)
+    at async PrismaPgAdapter.queryRaw (D:\DevCollab\collabx-backend\node_modules\@prisma\adapter-pg\dist\index.js:604:30)
+    at async e.interpretNode (D:\DevCollab\collabx-backend\node_modules\@prisma\client-engine-runtime\src\interpreter\query-interpreter.ts:186:26)
+    at async e.interpretNode (D:\DevCollab\collabx-backend\node_modules\@prisma\client-engine-runtime\src\interpreter\query-interpreter.ts:213:41)
+    at async e.interpretNode (D:\DevCollab\collabx-backend\node_modules\@prisma\client-engine-runtime\src\interpreter\query-interpreter.ts:272:41)
+    at async e.run (D:\DevCollab\collabx-backend\node_modules\@prisma\client-engine-runtime\src\interpreter\query-interpreter.ts:94:23)
+    at async execute (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\core\engines\client\LocalExecutor.ts:81:12)
+    at async jt.request (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\core\engines\client\ClientEngine.ts:504:22)
+[2026-06-26 11:44:42:4442] [ERROR]: POST /api/v1/auth/signin - Status: 500 - Message: Connection terminated unexpectedly
+[2026-06-26 11:44:42:4442] [ERROR]: Error: Connection terminated unexpectedly
+    at D:\DevCollab\collabx-backend\node_modules\pg-pool\index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async PrismaPgAdapter.performIO (D:\DevCollab\collabx-backend\node_modules\@prisma\adapter-pg\dist\index.js:654:22)
+    at async PrismaPgAdapter.queryRaw (D:\DevCollab\collabx-backend\node_modules\@prisma\adapter-pg\dist\index.js:604:30)
+    at async e.interpretNode (D:\DevCollab\collabx-backend\node_modules\@prisma\client-engine-runtime\src\interpreter\query-interpreter.ts:186:26)
+    at async e.interpretNode (D:\DevCollab\collabx-backend\node_modules\@prisma\client-engine-runtime\src\interpreter\query-interpreter.ts:213:41)
+    at async e.interpretNode (D:\DevCollab\collabx-backend\node_modules\@prisma\client-engine-runtime\src\interpreter\query-interpreter.ts:272:41)
+    at async e.run (D:\DevCollab\collabx-backend\node_modules\@prisma\client-engine-runtime\src\interpreter\query-interpreter.ts:94:23)
+    at async execute (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\core\engines\client\LocalExecutor.ts:81:12)
+    at async jt.request (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\core\engines\client\ClientEngine.ts:504:22)
+[2026-06-26 11:45:27:4527] [ERROR]: POST /api/v1/auth/signin - Status: 500 - Message: 
+Invalid `prisma.user.findUnique()` invocation in
+D:\DevCollab\collabx-backend\src\services\auth.service.ts:59:36
+
+  56 
+  57 static async signIn(email: string, password: string) {
+  58   // Find user by email
+→ 59   const user = await prisma.user.findUnique(
+Server has closed the connection.
+[2026-06-26 11:45:27:4527] [ERROR]: PrismaClientKnownRequestError: 
+Invalid `prisma.user.findUnique()` invocation in
+D:\DevCollab\collabx-backend\src\services\auth.service.ts:59:36
+
+  56 
+  57 static async signIn(email: string, password: string) {
+  58   // Find user by email
+→ 59   const user = await prisma.user.findUnique(
+Server has closed the connection.
+    at zr.handleRequestError (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:237:13)
+    at zr.handleAndLogRequestError (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:183:12)
+    at zr.request (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:152:12)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async a (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:963:24)
+    at async Function.signIn (D:\DevCollab\collabx-backend\src\services\auth.service.ts:59:18)
+    at async signIn (D:\DevCollab\collabx-backend\src\controllers\auth.controller.ts:25:64)
+[2026-06-26 11:46:31:4631] [INFO]: Kafka consumer event handlers registered for Notification and Inbox Modules
+[2026-06-26 11:46:31:4631] [INFO]: Initializing Kafka connection...
+[2026-06-26 11:46:31:4631] [INFO]: Successfully connected to Redis at: redis://127.0.0.1:6379
+[2026-06-26 11:46:32:4632] [INFO]: Kafka Producer connected successfully
+[2026-06-26 11:46:32:4632] [INFO]: Kafka Consumer connected successfully
+[2026-06-26 11:46:32:4632] [INFO]: Kafka Consumer subscribed to topic: notification.created
+[2026-06-26 11:46:32:4632] [INFO]: Kafka Consumer subscribed to topic: workspace.invited
+[2026-06-26 11:46:32:4632] [INFO]: Kafka Consumer subscribed to topic: member.joined
+[2026-06-26 11:46:32:4632] [INFO]: Kafka Consumer subscribed to topic: role.changed
+[2026-06-26 11:46:32:4632] [INFO]: Kafka Consumer subscribed to topic: inbox.created
+[2026-06-26 11:46:35:4635] [INFO]: Kafka initialized successfully
+[2026-06-26 11:46:35:4635] [INFO]: Connecting to RabbitMQ...
+[2026-06-26 11:46:36:4636] [INFO]: Successfully connected to RabbitMQ at: amqp://localhost:5672
+[2026-06-26 11:46:36:4636] [INFO]: RabbitMQ asserted queue: notification-emails
+[2026-06-26 11:46:36:4636] [INFO]: RabbitMQ asserted queue: workspace-invite-emails
+[2026-06-26 11:46:36:4636] [INFO]: RabbitMQ asserted queue: daily-digest
+[2026-06-26 11:46:36:4636] [INFO]: RabbitMQ workers started successfully
+[2026-06-26 11:46:36:4636] [INFO]: Server is running on port 5001
+[2026-06-26 11:46:55:4655] [ERROR]: POST /api/v1/auth/signin - Status: 500 - Message: 
+Invalid `prisma.user.findUnique()` invocation in
+D:\DevCollab\collabx-backend\src\services\auth.service.ts:59:36
+
+  56 
+  57 static async signIn(email: string, password: string) {
+  58   // Find user by email
+→ 59   const user = await prisma.user.findUnique(
+Server has closed the connection.
+[2026-06-26 11:46:55:4655] [ERROR]: PrismaClientKnownRequestError: 
+Invalid `prisma.user.findUnique()` invocation in
+D:\DevCollab\collabx-backend\src\services\auth.service.ts:59:36
+
+  56 
+  57 static async signIn(email: string, password: string) {
+  58   // Find user by email
+→ 59   const user = await prisma.user.findUnique(
+Server has closed the connection.
+    at zr.handleRequestError (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:237:13)
+    at zr.handleAndLogRequestError (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:183:12)
+    at zr.request (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:152:12)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async a (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:963:24)
+    at async Function.signIn (D:\DevCollab\collabx-backend\src\services\auth.service.ts:59:18)
+    at async signIn (D:\DevCollab\collabx-backend\src\controllers\auth.controller.ts:25:64)
+[2026-06-26 12:08:17:817] [INFO]: Kafka consumer event handlers registered for Notification and Inbox Modules
+[2026-06-26 12:08:17:817] [INFO]: Initializing Kafka connection...
+[2026-06-26 12:08:17:817] [INFO]: Successfully connected to Redis at: redis://127.0.0.1:6379
+[2026-06-26 12:08:17:817] [INFO]: Kafka Producer connected successfully
+[2026-06-26 12:08:17:817] [INFO]: Kafka Consumer connected successfully
+[2026-06-26 12:08:17:817] [INFO]: Kafka Consumer subscribed to topic: notification.created
+[2026-06-26 12:08:17:817] [INFO]: Kafka Consumer subscribed to topic: workspace.invited
+[2026-06-26 12:08:18:818] [INFO]: Kafka Consumer subscribed to topic: member.joined
+[2026-06-26 12:08:18:818] [INFO]: Kafka Consumer subscribed to topic: role.changed
+[2026-06-26 12:08:18:818] [INFO]: Kafka Consumer subscribed to topic: inbox.created
+[2026-06-26 12:08:27:827] [INFO]: Kafka consumer event handlers registered for Notification and Inbox Modules
+[2026-06-26 12:08:27:827] [INFO]: Initializing Kafka connection...
+[2026-06-26 12:08:27:827] [INFO]: Successfully connected to Redis at: redis://127.0.0.1:6379
+[2026-06-26 12:08:27:827] [INFO]: Kafka Producer connected successfully
+[2026-06-26 12:08:27:827] [INFO]: Kafka Consumer connected successfully
+[2026-06-26 12:08:27:827] [INFO]: Kafka Consumer subscribed to topic: notification.created
+[2026-06-26 12:08:27:827] [INFO]: Kafka Consumer subscribed to topic: workspace.invited
+[2026-06-26 12:08:27:827] [INFO]: Kafka Consumer subscribed to topic: member.joined
+[2026-06-26 12:08:27:827] [INFO]: Kafka Consumer subscribed to topic: role.changed
+[2026-06-26 12:08:27:827] [INFO]: Kafka Consumer subscribed to topic: inbox.created
+[2026-06-26 12:08:50:850] [INFO]: Kafka consumer event handlers registered for Notification and Inbox Modules
+[2026-06-26 12:08:50:850] [INFO]: Initializing Kafka connection...
+[2026-06-26 12:08:50:850] [INFO]: Successfully connected to Redis at: redis://127.0.0.1:6379
+[2026-06-26 12:08:50:850] [INFO]: Kafka Producer connected successfully
+[2026-06-26 12:08:50:850] [INFO]: Kafka Consumer connected successfully
+[2026-06-26 12:08:50:850] [INFO]: Kafka Consumer subscribed to topic: notification.created
+[2026-06-26 12:08:50:850] [INFO]: Kafka Consumer subscribed to topic: workspace.invited
+[2026-06-26 12:08:50:850] [INFO]: Kafka Consumer subscribed to topic: member.joined
+[2026-06-26 12:08:50:850] [INFO]: Kafka Consumer subscribed to topic: role.changed
+[2026-06-26 12:08:50:850] [INFO]: Kafka Consumer subscribed to topic: inbox.created
+[2026-06-26 12:09:01:91] [INFO]: Kafka consumer event handlers registered for Notification and Inbox Modules
+[2026-06-26 12:09:01:91] [INFO]: Initializing Kafka connection...
+[2026-06-26 12:09:01:91] [INFO]: Successfully connected to Redis at: redis://127.0.0.1:6379
+[2026-06-26 12:09:01:91] [INFO]: Kafka Producer connected successfully
+[2026-06-26 12:09:01:91] [INFO]: Kafka Consumer connected successfully
+[2026-06-26 12:09:01:91] [INFO]: Kafka Consumer subscribed to topic: notification.created
+[2026-06-26 12:09:01:91] [INFO]: Kafka Consumer subscribed to topic: workspace.invited
+[2026-06-26 12:09:01:91] [INFO]: Kafka Consumer subscribed to topic: member.joined
+[2026-06-26 12:09:01:91] [INFO]: Kafka Consumer subscribed to topic: role.changed
+[2026-06-26 12:09:01:91] [INFO]: Kafka Consumer subscribed to topic: inbox.created
+[2026-06-26 12:09:13:913] [INFO]: Kafka consumer event handlers registered for Notification and Inbox Modules
+[2026-06-26 12:09:13:913] [INFO]: Initializing Kafka connection...
+[2026-06-26 12:09:13:913] [INFO]: Successfully connected to Redis at: redis://127.0.0.1:6379
+[2026-06-26 12:09:13:913] [INFO]: Kafka Producer connected successfully
+[2026-06-26 12:09:13:913] [INFO]: Kafka Consumer connected successfully
+[2026-06-26 12:09:13:913] [INFO]: Kafka Consumer subscribed to topic: notification.created
+[2026-06-26 12:09:13:913] [INFO]: Kafka Consumer subscribed to topic: workspace.invited
+[2026-06-26 12:09:13:913] [INFO]: Kafka Consumer subscribed to topic: member.joined
+[2026-06-26 12:09:13:913] [INFO]: Kafka Consumer subscribed to topic: role.changed
+[2026-06-26 12:09:13:913] [INFO]: Kafka Consumer subscribed to topic: inbox.created

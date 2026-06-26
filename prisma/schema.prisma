@@ -41,6 +41,8 @@ model User {
   createdTasks          Task[]            @relation("TaskCreator")
   taskComments          TaskComment[]
   files                 File[]            @relation("FileOwner")
+  documents             Document[]
+  favoriteDocuments     FavoriteDocument[]
 }
 
 model Workspace {
@@ -55,8 +57,36 @@ model Workspace {
   inboxItems    InboxItem[]
   tasks         Task[]
   files         File[]
+  documents     Document[]
   createdAt     DateTime          @default(now())
   updatedAt     DateTime          @updatedAt
+}
+
+model Document {
+  id          Int                @id @default(autoincrement())
+  title       String
+  emoji       String             @default("📄")
+  summary     String?
+  body        String             @default("# Untitled\n\nStart writing…")
+  workspaceId Int
+  workspace   Workspace          @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  ownerId     Int
+  owner       User               @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  favoritedBy FavoriteDocument[]
+  createdAt   DateTime           @default(now())
+  updatedAt   DateTime           @updatedAt
+
+  @@index([workspaceId])
+  @@index([ownerId])
+}
+
+model FavoriteDocument {
+  userId     Int
+  documentId Int
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  document   Document @relation(fields: [documentId], references: [id], onDelete: Cascade)
+
+  @@id([userId, documentId])
 }
 
 model WorkspaceMember {

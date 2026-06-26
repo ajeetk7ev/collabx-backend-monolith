@@ -11,11 +11,13 @@ import {
 } from "../validation/workspace.validation";
 import workspaceMemberRoutes from "./workspace-member.routes";
 import taskRoutes from "./task.routes";
+import documentRoutes from "./document.routes";
 
 const router = Router();
 
 router.use("/:workspaceId/members", workspaceMemberRoutes);
 router.use("/:workspaceId/tasks", taskRoutes);
+router.use("/:workspaceId/docs", documentRoutes);
 
 // All workspace routes require authentication
 router.use(authenticate as any);

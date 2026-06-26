@@ -653,3 +653,139 @@ The table `public.Notification` does not exist in the current database.
     at IncomingMessage.emit (node:domain:489:12)
     at endReadableNT (node:internal/streams/readable:1698:12)
     at processTicksAndRejections (node:internal/process/task_queues:82:21)
+[2026-06-25 11:52:42:5242] [ERROR]: Failed to connect RabbitMQ. Continuing server boot: Socket closed abruptly during opening handshake
+[2026-06-26 11:43:04:434] [ERROR]: GET /api/v1/workspaces - Status: 401 - Message: Access token is missing. Please log in.
+[2026-06-26 11:43:04:434] [ERROR]: Error: Access token is missing. Please log in.
+    at authenticate (D:\DevCollab\collabx-backend\src\middlewares\auth.middleware.ts:30:11)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (D:\DevCollab\collabx-backend\node_modules\router\index.js:342:13)
+    at D:\DevCollab\collabx-backend\node_modules\router\index.js:297:9
+    at processParams (D:\DevCollab\collabx-backend\node_modules\router\index.js:582:12)
+    at next (D:\DevCollab\collabx-backend\node_modules\router\index.js:291:5)
+    at Function.handle (D:\DevCollab\collabx-backend\node_modules\router\index.js:186:3)
+    at router (D:\DevCollab\collabx-backend\node_modules\router\index.js:60:12)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (D:\DevCollab\collabx-backend\node_modules\router\index.js:342:13)
+[2026-06-26 11:43:04:434] [ERROR]: GET /api/v1/workspaces - Status: 401 - Message: Access token is missing. Please log in.
+[2026-06-26 11:43:04:434] [ERROR]: Error: Access token is missing. Please log in.
+    at authenticate (D:\DevCollab\collabx-backend\src\middlewares\auth.middleware.ts:30:11)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (D:\DevCollab\collabx-backend\node_modules\router\index.js:342:13)
+    at D:\DevCollab\collabx-backend\node_modules\router\index.js:297:9
+    at processParams (D:\DevCollab\collabx-backend\node_modules\router\index.js:582:12)
+    at next (D:\DevCollab\collabx-backend\node_modules\router\index.js:291:5)
+    at Function.handle (D:\DevCollab\collabx-backend\node_modules\router\index.js:186:3)
+    at router (D:\DevCollab\collabx-backend\node_modules\router\index.js:60:12)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (D:\DevCollab\collabx-backend\node_modules\router\index.js:342:13)
+[2026-06-26 11:43:04:434] [ERROR]: POST /api/v1/auth/refresh - Status: 401 - Message: Refresh token is missing
+[2026-06-26 11:43:04:434] [ERROR]: Error: Refresh token is missing
+    at Function.refresh (D:\DevCollab\collabx-backend\src\services\auth.service.ts:113:13)
+    at refresh (D:\DevCollab\collabx-backend\src\controllers\auth.controller.ts:72:67)
+    at D:\DevCollab\collabx-backend\src\utils\asyncHandler.ts:7:21
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\DevCollab\collabx-backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\DevCollab\collabx-backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\DevCollab\collabx-backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\DevCollab\collabx-backend\node_modules\router\lib\layer.js:152:17)
+    at D:\DevCollab\collabx-backend\node_modules\router\index.js:295:15
+    at processParams (D:\DevCollab\collabx-backend\node_modules\router\index.js:582:12)
+[2026-06-26 11:43:27:4327] [ERROR]: POST /api/v1/auth/signin - Status: 500 - Message: 
+Invalid `prisma.user.findUnique()` invocation in
+D:\DevCollab\collabx-backend\src\services\auth.service.ts:59:36
+
+  56 
+  57 static async signIn(email: string, password: string) {
+  58   // Find user by email
+→ 59   const user = await prisma.user.findUnique(
+Server has closed the connection.
+[2026-06-26 11:43:27:4327] [ERROR]: PrismaClientKnownRequestError: 
+Invalid `prisma.user.findUnique()` invocation in
+D:\DevCollab\collabx-backend\src\services\auth.service.ts:59:36
+
+  56 
+  57 static async signIn(email: string, password: string) {
+  58   // Find user by email
+→ 59   const user = await prisma.user.findUnique(
+Server has closed the connection.
+    at zr.handleRequestError (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:237:13)
+    at zr.handleAndLogRequestError (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:183:12)
+    at zr.request (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:152:12)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async a (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:963:24)
+    at async Function.signIn (D:\DevCollab\collabx-backend\src\services\auth.service.ts:59:18)
+    at async signIn (D:\DevCollab\collabx-backend\src\controllers\auth.controller.ts:25:64)
+[2026-06-26 11:44:17:4417] [ERROR]: POST /api/v1/auth/signin - Status: 500 - Message: Connection terminated unexpectedly
+[2026-06-26 11:44:17:4417] [ERROR]: Error: Connection terminated unexpectedly
+    at D:\DevCollab\collabx-backend\node_modules\pg-pool\index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async PrismaPgAdapter.performIO (D:\DevCollab\collabx-backend\node_modules\@prisma\adapter-pg\dist\index.js:654:22)
+    at async PrismaPgAdapter.queryRaw (D:\DevCollab\collabx-backend\node_modules\@prisma\adapter-pg\dist\index.js:604:30)
+    at async e.interpretNode (D:\DevCollab\collabx-backend\node_modules\@prisma\client-engine-runtime\src\interpreter\query-interpreter.ts:186:26)
+    at async e.interpretNode (D:\DevCollab\collabx-backend\node_modules\@prisma\client-engine-runtime\src\interpreter\query-interpreter.ts:213:41)
+    at async e.interpretNode (D:\DevCollab\collabx-backend\node_modules\@prisma\client-engine-runtime\src\interpreter\query-interpreter.ts:272:41)
+    at async e.run (D:\DevCollab\collabx-backend\node_modules\@prisma\client-engine-runtime\src\interpreter\query-interpreter.ts:94:23)
+    at async execute (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\core\engines\client\LocalExecutor.ts:81:12)
+    at async jt.request (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\core\engines\client\ClientEngine.ts:504:22)
+[2026-06-26 11:44:42:4442] [ERROR]: POST /api/v1/auth/signin - Status: 500 - Message: Connection terminated unexpectedly
+[2026-06-26 11:44:42:4442] [ERROR]: Error: Connection terminated unexpectedly
+    at D:\DevCollab\collabx-backend\node_modules\pg-pool\index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async PrismaPgAdapter.performIO (D:\DevCollab\collabx-backend\node_modules\@prisma\adapter-pg\dist\index.js:654:22)
+    at async PrismaPgAdapter.queryRaw (D:\DevCollab\collabx-backend\node_modules\@prisma\adapter-pg\dist\index.js:604:30)
+    at async e.interpretNode (D:\DevCollab\collabx-backend\node_modules\@prisma\client-engine-runtime\src\interpreter\query-interpreter.ts:186:26)
+    at async e.interpretNode (D:\DevCollab\collabx-backend\node_modules\@prisma\client-engine-runtime\src\interpreter\query-interpreter.ts:213:41)
+    at async e.interpretNode (D:\DevCollab\collabx-backend\node_modules\@prisma\client-engine-runtime\src\interpreter\query-interpreter.ts:272:41)
+    at async e.run (D:\DevCollab\collabx-backend\node_modules\@prisma\client-engine-runtime\src\interpreter\query-interpreter.ts:94:23)
+    at async execute (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\core\engines\client\LocalExecutor.ts:81:12)
+    at async jt.request (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\core\engines\client\ClientEngine.ts:504:22)
+[2026-06-26 11:45:27:4527] [ERROR]: POST /api/v1/auth/signin - Status: 500 - Message: 
+Invalid `prisma.user.findUnique()` invocation in
+D:\DevCollab\collabx-backend\src\services\auth.service.ts:59:36
+
+  56 
+  57 static async signIn(email: string, password: string) {
+  58   // Find user by email
+→ 59   const user = await prisma.user.findUnique(
+Server has closed the connection.
+[2026-06-26 11:45:27:4527] [ERROR]: PrismaClientKnownRequestError: 
+Invalid `prisma.user.findUnique()` invocation in
+D:\DevCollab\collabx-backend\src\services\auth.service.ts:59:36
+
+  56 
+  57 static async signIn(email: string, password: string) {
+  58   // Find user by email
+→ 59   const user = await prisma.user.findUnique(
+Server has closed the connection.
+    at zr.handleRequestError (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:237:13)
+    at zr.handleAndLogRequestError (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:183:12)
+    at zr.request (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:152:12)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async a (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:963:24)
+    at async Function.signIn (D:\DevCollab\collabx-backend\src\services\auth.service.ts:59:18)
+    at async signIn (D:\DevCollab\collabx-backend\src\controllers\auth.controller.ts:25:64)
+[2026-06-26 11:46:55:4655] [ERROR]: POST /api/v1/auth/signin - Status: 500 - Message: 
+Invalid `prisma.user.findUnique()` invocation in
+D:\DevCollab\collabx-backend\src\services\auth.service.ts:59:36
+
+  56 
+  57 static async signIn(email: string, password: string) {
+  58   // Find user by email
+→ 59   const user = await prisma.user.findUnique(
+Server has closed the connection.
+[2026-06-26 11:46:55:4655] [ERROR]: PrismaClientKnownRequestError: 
+Invalid `prisma.user.findUnique()` invocation in
+D:\DevCollab\collabx-backend\src\services\auth.service.ts:59:36
+
+  56 
+  57 static async signIn(email: string, password: string) {
+  58   // Find user by email
+→ 59   const user = await prisma.user.findUnique(
+Server has closed the connection.
+    at zr.handleRequestError (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:237:13)
+    at zr.handleAndLogRequestError (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:183:12)
+    at zr.request (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:152:12)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async a (D:\DevCollab\collabx-backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:963:24)
+    at async Function.signIn (D:\DevCollab\collabx-backend\src\services\auth.service.ts:59:18)
+    at async signIn (D:\DevCollab\collabx-backend\src\controllers\auth.controller.ts:25:64)
