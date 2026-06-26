@@ -12,12 +12,16 @@ import {
 import workspaceMemberRoutes from "./workspace-member.routes";
 import taskRoutes from "./task.routes";
 import documentRoutes from "./document.routes";
+import channelRoutes from "./channel.routes";
+import presenceRoutes from "./presence.routes";
 
 const router = Router();
 
 router.use("/:workspaceId/members", workspaceMemberRoutes);
 router.use("/:workspaceId/tasks", taskRoutes);
 router.use("/:workspaceId/docs", documentRoutes);
+router.use("/:workspaceId/channels", channelRoutes);
+router.use("/:workspaceId/presence", presenceRoutes);
 
 // All workspace routes require authentication
 router.use(authenticate as any);

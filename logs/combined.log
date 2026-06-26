@@ -1394,3 +1394,85 @@ Server has closed the connection.
 [2026-06-26 12:09:13:913] [INFO]: Kafka Consumer subscribed to topic: member.joined
 [2026-06-26 12:09:13:913] [INFO]: Kafka Consumer subscribed to topic: role.changed
 [2026-06-26 12:09:13:913] [INFO]: Kafka Consumer subscribed to topic: inbox.created
+[2026-06-26 12:11:54:1154] [INFO]: Kafka consumer event handlers registered for Notification and Inbox Modules
+[2026-06-26 12:11:54:1154] [INFO]: Initializing Kafka connection...
+[2026-06-26 12:11:54:1154] [INFO]: Successfully connected to Redis at: redis://127.0.0.1:6379
+[2026-06-26 12:11:54:1154] [INFO]: Kafka Producer connected successfully
+[2026-06-26 12:11:54:1154] [INFO]: Kafka Consumer connected successfully
+[2026-06-26 12:11:54:1154] [INFO]: Kafka Consumer subscribed to topic: notification.created
+[2026-06-26 12:11:54:1154] [INFO]: Kafka Consumer subscribed to topic: workspace.invited
+[2026-06-26 12:11:54:1154] [INFO]: Kafka Consumer subscribed to topic: member.joined
+[2026-06-26 12:11:54:1154] [INFO]: Kafka Consumer subscribed to topic: role.changed
+[2026-06-26 12:11:54:1154] [INFO]: Kafka Consumer subscribed to topic: inbox.created
+[2026-06-26 12:11:57:1157] [INFO]: Kafka initialized successfully
+[2026-06-26 12:11:57:1157] [INFO]: Connecting to RabbitMQ...
+[2026-06-26 12:11:58:1158] [INFO]: Successfully connected to RabbitMQ at: amqp://localhost:5672
+[2026-06-26 12:11:58:1158] [INFO]: RabbitMQ asserted queue: notification-emails
+[2026-06-26 12:11:58:1158] [INFO]: RabbitMQ asserted queue: workspace-invite-emails
+[2026-06-26 12:11:58:1158] [INFO]: RabbitMQ asserted queue: daily-digest
+[2026-06-26 12:11:58:1158] [INFO]: RabbitMQ workers started successfully
+[2026-06-26 12:11:58:1158] [INFO]: Server is running on port 5001
+[2026-06-26 12:48:12:4812] [INFO]: Kafka consumer event handlers registered for Notification and Inbox Modules
+[2026-06-26 12:48:12:4812] [INFO]: Initializing Kafka connection...
+[2026-06-26 12:48:12:4812] [INFO]: Successfully connected to Redis at: redis://127.0.0.1:6379
+[2026-06-26 12:48:12:4812] [INFO]: Kafka Producer connected successfully
+[2026-06-26 12:48:12:4812] [INFO]: Kafka Consumer connected successfully
+[2026-06-26 12:48:12:4812] [INFO]: Kafka Consumer subscribed to topic: notification.created
+[2026-06-26 12:48:12:4812] [INFO]: Kafka Consumer subscribed to topic: workspace.invited
+[2026-06-26 12:48:12:4812] [INFO]: Kafka Consumer subscribed to topic: member.joined
+[2026-06-26 12:48:12:4812] [INFO]: Kafka Consumer subscribed to topic: role.changed
+[2026-06-26 12:48:12:4812] [INFO]: Kafka Consumer subscribed to topic: inbox.created
+[2026-06-26 12:48:31:4831] [INFO]: Kafka initialized successfully
+[2026-06-26 12:48:31:4831] [INFO]: Connecting to RabbitMQ...
+[2026-06-26 12:48:31:4831] [INFO]: Successfully connected to RabbitMQ at: amqp://localhost:5672
+[2026-06-26 12:48:31:4831] [INFO]: RabbitMQ asserted queue: notification-emails
+[2026-06-26 12:48:31:4831] [INFO]: RabbitMQ asserted queue: workspace-invite-emails
+[2026-06-26 12:48:31:4831] [INFO]: RabbitMQ asserted queue: daily-digest
+[2026-06-26 12:48:31:4831] [INFO]: RabbitMQ workers started successfully
+[2026-06-26 12:48:31:4831] [INFO]: Server is running on port 5001
+[2026-06-26 12:48:49:4849] [INFO]: Kafka consumer event handlers registered for Notification and Inbox Modules
+[2026-06-26 12:48:49:4849] [INFO]: Initializing Kafka connection...
+[2026-06-26 12:48:49:4849] [INFO]: Successfully connected to Redis at: redis://127.0.0.1:6379
+[2026-06-26 12:48:49:4849] [INFO]: Kafka Producer connected successfully
+[2026-06-26 12:48:49:4849] [INFO]: Kafka Consumer connected successfully
+[2026-06-26 12:48:49:4849] [INFO]: Kafka Consumer subscribed to topic: notification.created
+[2026-06-26 12:48:49:4849] [INFO]: Kafka Consumer subscribed to topic: workspace.invited
+[2026-06-26 12:48:49:4849] [INFO]: Kafka Consumer subscribed to topic: member.joined
+[2026-06-26 12:48:49:4849] [INFO]: Kafka Consumer subscribed to topic: role.changed
+[2026-06-26 12:48:49:4849] [INFO]: Kafka Consumer subscribed to topic: inbox.created
+[2026-06-26 12:52:14:5214] [INFO]: Kafka consumer event handlers registered for Notification and Inbox Modules
+[2026-06-26 12:52:14:5214] [INFO]: Initializing Kafka connection...
+[2026-06-26 12:52:14:5214] [INFO]: Successfully connected to Redis at: redis://127.0.0.1:6379
+[2026-06-26 12:52:14:5214] [INFO]: Kafka Producer connected successfully
+[2026-06-26 12:52:14:5214] [INFO]: Kafka Consumer connected successfully
+[2026-06-26 12:52:15:5215] [INFO]: Kafka Consumer subscribed to topic: notification.created
+[2026-06-26 12:52:15:5215] [INFO]: Kafka Consumer subscribed to topic: workspace.invited
+[2026-06-26 12:52:15:5215] [INFO]: Kafka Consumer subscribed to topic: member.joined
+[2026-06-26 12:52:15:5215] [INFO]: Kafka Consumer subscribed to topic: role.changed
+[2026-06-26 12:52:15:5215] [INFO]: Kafka Consumer subscribed to topic: inbox.created
+[2026-06-26 12:52:18:5218] [INFO]: Kafka initialized successfully
+[2026-06-26 12:52:18:5218] [INFO]: Connecting to RabbitMQ...
+[2026-06-26 12:52:18:5218] [INFO]: Successfully connected to RabbitMQ at: amqp://localhost:5672
+[2026-06-26 12:52:18:5218] [INFO]: RabbitMQ asserted queue: notification-emails
+[2026-06-26 12:52:18:5218] [INFO]: RabbitMQ asserted queue: workspace-invite-emails
+[2026-06-26 12:52:18:5218] [INFO]: RabbitMQ asserted queue: daily-digest
+[2026-06-26 12:52:18:5218] [INFO]: RabbitMQ workers started successfully
+[2026-06-26 12:52:18:5218] [INFO]: Server is running on port 5001
+[2026-06-26 12:57:06:576] [INFO]: Kafka consumer event handlers registered for Notification and Inbox Modules
+[2026-06-26 12:57:06:576] [INFO]: Initializing Kafka connection...
+[2026-06-26 12:57:06:576] [INFO]: Successfully connected to Redis at: redis://127.0.0.1:6379
+[2026-06-26 12:57:06:576] [INFO]: Kafka Producer connected successfully
+[2026-06-26 12:57:06:576] [INFO]: Kafka Consumer connected successfully
+[2026-06-26 12:57:06:576] [INFO]: Kafka Consumer subscribed to topic: notification.created
+[2026-06-26 12:57:06:576] [INFO]: Kafka Consumer subscribed to topic: workspace.invited
+[2026-06-26 12:57:06:576] [INFO]: Kafka Consumer subscribed to topic: member.joined
+[2026-06-26 12:57:06:576] [INFO]: Kafka Consumer subscribed to topic: role.changed
+[2026-06-26 12:57:06:576] [INFO]: Kafka Consumer subscribed to topic: inbox.created
+[2026-06-26 12:57:29:5729] [INFO]: Kafka initialized successfully
+[2026-06-26 12:57:29:5729] [INFO]: Connecting to RabbitMQ...
+[2026-06-26 12:57:29:5729] [INFO]: Successfully connected to RabbitMQ at: amqp://localhost:5672
+[2026-06-26 12:57:29:5729] [INFO]: RabbitMQ asserted queue: notification-emails
+[2026-06-26 12:57:29:5729] [INFO]: RabbitMQ asserted queue: workspace-invite-emails
+[2026-06-26 12:57:29:5729] [INFO]: RabbitMQ asserted queue: daily-digest
+[2026-06-26 12:57:29:5729] [INFO]: RabbitMQ workers started successfully
+[2026-06-26 12:57:29:5729] [INFO]: Server is running on port 5001

@@ -43,6 +43,9 @@ model User {
   files                 File[]            @relation("FileOwner")
   documents             Document[]
   favoriteDocuments     FavoriteDocument[]
+  createdChannels       Channel[]
+  messages              Message[]
+  messageReactions      MessageReaction[]
 }
 
 model Workspace {
@@ -58,6 +61,7 @@ model Workspace {
   tasks         Task[]
   files         File[]
   documents     Document[]
+  channels      Channel[]
   createdAt     DateTime          @default(now())
   updatedAt     DateTime          @updatedAt
 }
@@ -98,6 +102,7 @@ model WorkspaceMember {
   presence    String   @default("online")
   user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   workspace   Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  channels    Channel[]
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 
@@ -224,10 +229,64 @@ model File {
   ownerId     Int
   owner       User      @relation("FileOwner", fields: [ownerId], references: [id], onDelete: Cascade)
   channelId   Int?
+  messageId   Int?
+  message     Message?  @relation(fields: [messageId], references: [id], onDelete: SetNull)
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
 
   @@index([workspaceId])
   @@index([ownerId])
+  @@index([messageId])
+}
+
+model Channel {
+  id          Int               @id @default(autoincrement())
+  name        String
+  description String?
+  isPrivate   Boolean           @default(false)
+  workspaceId Int
+  workspace   Workspace         @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  creatorId   Int
+  creator     User              @relation(fields: [creatorId], references: [id], onDelete: Cascade)
+  members     WorkspaceMember[]
+  messages    Message[]
+  createdAt   DateTime          @default(now())
+  updatedAt   DateTime          @updatedAt
+
+  @@index([workspaceId])
+  @@index([creatorId])
+}
+
+model Message {
+  id          Int               @id @default(autoincrement())
+  body        String
+  channelId   Int
+  channel     Channel           @relation(fields: [channelId], references: [id], onDelete: Cascade)
+  authorId    Int
+  author      User              @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  parentId    Int?
+  parent      Message?          @relation("MessageReplies", fields: [parentId], references: [id], onDelete: Cascade)
+  replies     Message[]         @relation("MessageReplies")
+  reactions   MessageReaction[]
+  files       File[]
+  createdAt   DateTime          @default(now())
+  updatedAt   DateTime          @updatedAt
+
+  @@index([channelId])
+  @@index([authorId])
+  @@index([parentId])
+}
+
+model MessageReaction {
+  id        Int      @id @default(autoincrement())
+  messageId Int
+  message   Message  @relation(fields: [messageId], references: [id], onDelete: Cascade)
+  userId    Int
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  emoji     String
+
+  @@unique([messageId, userId, emoji])
+  @@index([messageId])
+  @@index([userId])
 }
 

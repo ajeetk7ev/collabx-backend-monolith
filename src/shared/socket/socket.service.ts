@@ -5,8 +5,34 @@ import { env } from "../../config/env";
 import { logger } from "../../utils/logger";
 import { RedisService } from "../redis/redis.service";
 import { handleNotificationSocketEvents } from "../../modules/notifications/notification.socket";
+import { prisma } from "../../config/prisma";
 
 let io: Server | null = null;
+
+async function getPeerUserIds(userId: number): Promise<number[]> {
+  const workspaces = await prisma.workspace.findMany({
+    where: {
+      OR: [
+        { ownerId: userId },
+        { members: { some: { userId } } },
+      ],
+    },
+    select: {
+      ownerId: true,
+      members: {
+        select: { userId: true },
+      },
+    },
+  });
+
+  const ids = new Set<number>();
+  for (const ws of workspaces) {
+    ids.add(ws.ownerId);
+    ws.members.forEach((m) => ids.add(m.userId));
+  }
+  ids.delete(userId);
+  return Array.from(ids);
+}
 
 export function initSocketIO(server: HttpServer) {
   io = new Server(server, {
@@ -71,6 +97,27 @@ export function initSocketIO(server: HttpServer) {
     // Mark online in Redis
     await RedisService.setUserOnline(userId, socket.id);
 
+    // Broadcast online status to workspace peers
+    try {
+      const peers = await getPeerUserIds(userId);
+      for (const peerId of peers) {
+        io?.to(`user:${peerId}`).emit("user:presence", { userId, status: "online" });
+      }
+    } catch (err) {
+      logger.error(`Failed to broadcast online presence event for user ${userId}:`, err);
+    }
+
+    // Support room joining/leaving for channel-specific scoping
+    socket.on("room:join", (room: string) => {
+      void socket.join(room);
+      logger.info(`Socket ${socket.id} joined room: ${room}`);
+    });
+
+    socket.on("room:leave", (room: string) => {
+      void socket.leave(room);
+      logger.info(`Socket ${socket.id} left room: ${room}`);
+    });
+
     // Register module-specific handlers
     handleNotificationSocketEvents(socket);
 
@@ -78,6 +125,20 @@ export function initSocketIO(server: HttpServer) {
       logger.info(`Socket disconnected: ${socket.id} (User: ${userId})`);
       // Mark offline in Redis (updates last seen if all sockets disconnect)
       await RedisService.setUserOffline(userId, socket.id);
+
+      // Check if user is fully offline
+      const online = await RedisService.isUserOnline(userId);
+      if (!online) {
+        const lastSeen = new Date().toISOString();
+        try {
+          const peers = await getPeerUserIds(userId);
+          for (const peerId of peers) {
+            io?.to(`user:${peerId}`).emit("user:presence", { userId, status: "offline", lastSeen });
+          }
+        } catch (err) {
+          logger.error(`Failed to broadcast offline presence event for user ${userId}:`, err);
+        }
+      }
     });
   });
 
